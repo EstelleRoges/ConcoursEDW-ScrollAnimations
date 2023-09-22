@@ -32,38 +32,38 @@ const Header = () => {
           {isMobile ? (
             <>
               <HeaderStyle.Passeport
-              $isMobileNavVisible={isMobileNavVisible}
+                $isMobileNavVisible={isMobileNavVisible}
                 src={PassportIcon}
                 alt="Menu"
                 onClick={() => setIsMobileNavVisible((prevValue) => !prevValue)}
               />
               <ul>
                 <li>
-                  <a href="/">Le jeu</a>
+                  <a href="#aboutGame">Le jeu</a>
                 </li>
                 <li>
-                  <a href="/">Graphismes</a>
+                  <a href="#graphicsShowcase">Graphismes</a>
                 </li>
                 <li>
-                  <a href="/">Contenu</a>
+                  <a href="#singleGames">Contenu</a>
                 </li>
                 {isMobileNavVisible && (
-                <li>
-                  <button>Commander</button>
-                </li>
-              )}
+                  <li>
+                    <button>Commander</button>
+                  </li>
+                )}
               </ul>
             </>
           ) : (
             <ul>
               <li>
-                <a href="/">Le jeu</a>
+                <a href="#aboutGame">Le jeu</a>
               </li>
               <li>
-                <a href="/">Graphismes</a>
+                <a href="#graphicsShowcase">Graphismes</a>
               </li>
               <li>
-                <a href="/">Contenu</a>
+                <a href="#singleGames">Contenu</a>
               </li>
             </ul>
           )}

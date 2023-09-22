@@ -2,7 +2,7 @@ import * as GraphicsShowcaseStyle from "./GraphicsShowcaseStyle";
 
 const GraphicsShowcase = () => {
   return (
-    <section>
+    <section id="graphicsShowcase">
       <article>GraphicsShowcase</article>
     </section>
   );

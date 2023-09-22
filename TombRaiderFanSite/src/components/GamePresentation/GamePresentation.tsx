@@ -2,7 +2,7 @@ import * as GamePresentationStyle from "./GamePresentationStyle";
 
 const GamePresentation = () => {
   return (
-    <section>
+    <section id="aboutGame">
       <article>GamePresentation</article>
     </section>
   );

@@ -2,7 +2,7 @@ import * as SingleStyle from "./SingleGameSectionStyle";
 
 const SingleGameSections = () => {
   return (
-    <section>
+    <section id="singleGames">
       <article>SingleGameSections</article>
     </section>
   );

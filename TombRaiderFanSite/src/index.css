@@ -24,6 +24,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 html {
@@ -36,8 +37,7 @@ body {
   min-height: 100vh;
   background-color: var(--backgroundColor);
   color: var(--primary-darker);
-  scroll-behavior: smooth;
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 6rem;
   font-family: var(--main-font);
 }
 
