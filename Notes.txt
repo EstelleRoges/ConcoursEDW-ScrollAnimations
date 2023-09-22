@@ -1,6 +1,6 @@
 - Bouton Preorder faisant apparaître un modal qui propose toutes les futures plateformes où on pourra jouer
 
--Single page anec link anchors
+-Single page anec link anchors - OK
 
 -Image carnet de voyage en tant que bouton de nav
 
