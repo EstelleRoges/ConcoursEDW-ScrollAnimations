@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
+
+:root {
+  --backgroundColor: #2F190E;
+  --primary: #693720;
+  --primary-lighter: #996241;
+  --secondary: #ECA158;
+  --secondary-lighter: #F3C291;
+  --tertiary: #64A671;
+  --highlight: #7A302A;
+  --highlight-secondary: #F5F4DF;
+
+  color-scheme: light dark;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--backgroundColor);
+  color: var(--highlight-secondary);
+}
+
+section {
+  width: 100%;
+
+  &:not(:first-child) {
+    margin: 5rem auto;
+  }
+
+  & article {
+    margin: auto;
+    max-width: 1280px;
+  }
+}
+
+@media (prefers-color-scheme: light) {}

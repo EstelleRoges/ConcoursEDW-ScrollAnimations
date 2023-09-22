@@ -1,0 +1,7 @@
+- Bouton Preorder faisant apparaître un modal qui propose toutes les futures plateformes où on pourra jouer
+
+-Single page anec link anchors
+
+-Image carnet de voyage en tant que bouton de nav
+
+-Sélectionner des images et les renderiser pour les utiliser dans les animations de scroll
