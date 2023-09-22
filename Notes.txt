@@ -2,6 +2,6 @@
 
 -Single page anec link anchors - OK
 
--Image carnet de voyage en tant que bouton de nav
+-Image carnet de voyage en tant que bouton de nav - OK
 
 -Sélectionner des images et les renderiser pour les utiliser dans les animations de scroll
