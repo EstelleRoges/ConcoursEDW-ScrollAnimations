@@ -1,14 +1,15 @@
 import * as HeroStyle from "./HeroStyle";
+import Trailer from "../../assets/videos/TRTrailer.mp4";
 
 const HeroSection = () => {
   return (
     <HeroStyle.HeroContainer id="HeroVideo">
-      <HeroStyle.HeroVideo autoPlay loop muted>
-        <source
-          src="../../assets/videos/TR_remastered_trailer_ready.mp4"
-          type="video/mp4"
-        />
-      </HeroStyle.HeroVideo>
+      <video autoPlay loop muted>
+        <source src={Trailer} type="video/mp4" />
+      </video>
+      <HeroStyle.HeroTitle>
+        <h1>La légende est de retour...</h1>
+      </HeroStyle.HeroTitle>
     </HeroStyle.HeroContainer>
   );
 };

@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
 
+@font-face {
+  font-family: 'TrClassicFont';
+  src: url(./assets/fonts/trClassicFont.ttf) format('truetype');
+}
+
 :root {
-  --backgroundColor: #2F190E;
+  --backgroundColor: #F5F4DF;
   --primary: #693720;
   --primary-lighter: #996241;
   --secondary: #ECA158;
   --secondary-lighter: #F3C291;
   --tertiary: #64A671;
   --highlight: #7A302A;
-  --highlight-secondary: #F5F4DF;
+  --primary-darker: #2F190E;
+
+  --main-font: 'Raleway', sans-serif;
+  --title-font: 'TrClassicFont', cursive;
 
   color-scheme: light dark;
   text-rendering: optimizeLegibility;
@@ -27,19 +35,50 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--backgroundColor);
-  color: var(--highlight-secondary);
+  color: var(--primary-darker);
+  scroll-behavior: smooth;
+  scroll-margin-top: 4rem;
+  font-family: var(--main-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--title-font);
 }
 
 section {
   width: 100%;
 
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     margin: 5rem auto;
   }
 
   & article {
     margin: auto;
+    padding: 4rem;
     max-width: 1280px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--highlight);
+  font-family: var(--title-font);
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    text-shadow: 0 0 0.65rem var(--highlight);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
   }
 }
 
