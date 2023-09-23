@@ -38,17 +38,33 @@ const Header = () => {
                 onClick={() => setIsMobileNavVisible((prevValue) => !prevValue)}
               />
               <ul>
-                <li>
+                <li
+                  onClick={() =>
+                    setIsMobileNavVisible((prevValue) => !prevValue)
+                  }
+                >
                   <a href="#aboutGame">Le jeu</a>
                 </li>
-                <li>
+                <li
+                  onClick={() =>
+                    setIsMobileNavVisible((prevValue) => !prevValue)
+                  }
+                >
                   <a href="#graphicsShowcase">Graphismes</a>
                 </li>
-                <li>
+                <li
+                  onClick={() =>
+                    setIsMobileNavVisible((prevValue) => !prevValue)
+                  }
+                >
                   <a href="#singleGames">Contenu</a>
                 </li>
                 {isMobileNavVisible && (
-                  <li>
+                  <li
+                    onClick={() =>
+                      setIsMobileNavVisible((prevValue) => !prevValue)
+                    }
+                  >
                     <button>Commander</button>
                   </li>
                 )}

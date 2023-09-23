@@ -12,7 +12,7 @@ export const HeroContainer = styled.section`
     height: 100%;
     top: 0;
     object-fit: cover;
-    z-index: -1;
+    z-index: 1;
   }
 `;
 
@@ -22,6 +22,7 @@ export const HeroTitle = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
   backdrop-filter: brightness(65%);
   display: flex;
   flex-direction: column;

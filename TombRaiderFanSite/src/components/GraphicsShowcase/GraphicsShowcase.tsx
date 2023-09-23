@@ -1,10 +1,18 @@
+import { GraphicsComparison } from "../ComponentsIndex";
 import * as GraphicsShowcaseStyle from "./GraphicsShowcaseStyle";
 
 const GraphicsShowcase = () => {
   return (
-    <section id="graphicsShowcase">
-      <article>GraphicsShowcase</article>
-    </section>
+    <>
+    <GraphicsComparison />
+    <GraphicsShowcaseStyle.ShowcaseSection id="graphicsShowcase">
+      <GraphicsShowcaseStyle.ShowcaseContainer>
+        <GraphicsShowcaseStyle.ShowcaseData>
+          Other data
+        </GraphicsShowcaseStyle.ShowcaseData>
+      </GraphicsShowcaseStyle.ShowcaseContainer>
+    </GraphicsShowcaseStyle.ShowcaseSection>
+    </>
   );
 };
 

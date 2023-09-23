@@ -53,16 +53,33 @@ h6 {
 
 section {
   width: 100%;
+  /* background-color: var(--backgroundColor); */
+  z-index: 2;
 
-  &:not(:first-of-type) {
+  /* &:not(:first-of-type) {
     margin: 5rem auto;
-  }
+  } */
 
   & article {
     margin: auto;
     padding: 4rem;
     max-width: 1280px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--backgroundColor);
+    z-index: 2;
   }
+
+  & article h2 {
+    font-size: 2rem;
+  }
+
+}
+
+p {
+  font-size: 1.15rem;
 }
 
 a {

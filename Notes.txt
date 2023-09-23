@@ -5,3 +5,5 @@
 -Image carnet de voyage en tant que bouton de nav - OK
 
 -Sélectionner des images et les renderiser pour les utiliser dans les animations de scroll
+
+- Pour les transitions de l'ancien design au nouveau, traiter les opacités au scroll
