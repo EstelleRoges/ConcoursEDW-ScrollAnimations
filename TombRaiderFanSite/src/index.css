@@ -6,14 +6,14 @@
 }
 
 :root {
-  --backgroundColor: #F5F4DF;
+  --backgroundColor: #FAFAEF;
   --primary: #693720;
   --primary-lighter: #996241;
+  --primary-darker: #2F190E;
   --secondary: #ECA158;
   --secondary-lighter: #F3C291;
   --tertiary: #64A671;
   --highlight: #7A302A;
-  --primary-darker: #2F190E;
 
   --main-font: 'Raleway', sans-serif;
   --title-font: 'TrClassicFont', cursive;
@@ -53,12 +53,10 @@ h6 {
 
 section {
   width: 100%;
-  /* background-color: var(--backgroundColor); */
-  z-index: 2;
-
-  /* &:not(:first-of-type) {
-    margin: 5rem auto;
-  } */
+  background-color: var(--backgroundColor);
+  position: relative;
+  z-index: 1;
+  scroll-snap-type: y mandatory;
 
   & article {
     margin: auto;
@@ -68,8 +66,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--backgroundColor);
-    z-index: 2;
+    scroll-snap-align: center;
   }
 
   & article h2 {
@@ -84,14 +81,14 @@ p {
 
 a {
   text-decoration: none;
-  color: var(--highlight);
+  color: var(--primary-lighter);
   font-family: var(--title-font);
   letter-spacing: 1px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   transition: all 0.3s ease-out;
 
   &:hover {
-    text-shadow: 0 0 0.65rem var(--highlight);
+    text-shadow: 0 0 0.65rem var(--primary-lighter);
   }
 
   @media (max-width: 768px) {

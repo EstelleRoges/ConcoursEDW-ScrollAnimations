@@ -7,9 +7,10 @@ const HeroSection = () => {
       <video autoPlay loop muted>
         <source src={Trailer} type="video/mp4" />
       </video>
-      <HeroStyle.HeroTitle>
+    <HeroStyle.VideoShadow></HeroStyle.VideoShadow>
+      <HeroStyle.HeroData>
         <h1>La légende est de retour...</h1>
-      </HeroStyle.HeroTitle>
+      </HeroStyle.HeroData>
     </HeroStyle.HeroContainer>
   );
 };

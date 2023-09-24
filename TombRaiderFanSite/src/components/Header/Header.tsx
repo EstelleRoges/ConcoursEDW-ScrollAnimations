@@ -20,23 +20,32 @@ const Header = () => {
   }, [isMobile]);
 
   return (
-    <HeaderStyle.HeaderWrapper $isMobile={isMobile}>
-      <HeaderStyle.HeaderContainer>
-        <HeaderStyle.LogoContainer href="/" $isMobile={isMobile}>
-          <img src={Logo} alt="Logo" />
-        </HeaderStyle.LogoContainer>
-        <HeaderStyle.Navigation
-          $isMobile={isMobile}
-          $isMobileNavVisible={isMobileNavVisible}
-        >
-          {isMobile ? (
-            <>
-              <HeaderStyle.Passeport
-                $isMobileNavVisible={isMobileNavVisible}
-                src={PassportIcon}
-                alt="Menu"
-                onClick={() => setIsMobileNavVisible((prevValue) => !prevValue)}
-              />
+    <>
+      <HeaderStyle.HeaderWrapper $isMobile={isMobile}>
+        <HeaderStyle.HeaderContainer>
+          <HeaderStyle.Logo>
+            <img src={Logo} alt="Logo" />
+          </HeaderStyle.Logo>
+          <HeaderStyle.Passeport
+            $isMobileNavVisible={isMobileNavVisible}
+            src={PassportIcon}
+            alt="Menu"
+            onClick={() => setIsMobileNavVisible((prevValue) => !prevValue)}
+          />
+          {isMobileNavVisible && (
+            <HeaderStyle.Navigation
+              $isMobile={isMobile}
+              $isMobileNavVisible={isMobileNavVisible}
+            >
+              {isMobileNavVisible && (
+                <HeaderStyle.Close
+                  src={CloseIcon}
+                  alt="Menu"
+                  onClick={() =>
+                    setIsMobileNavVisible((prevValue) => !prevValue)
+                  }
+                />
+              )}
               <ul>
                 <li
                   onClick={() =>
@@ -59,41 +68,20 @@ const Header = () => {
                 >
                   <a href="#singleGames">Contenu</a>
                 </li>
-                {isMobileNavVisible && (
-                  <li
-                    onClick={() =>
-                      setIsMobileNavVisible((prevValue) => !prevValue)
-                    }
-                  >
-                    <button>Commander</button>
-                  </li>
-                )}
+
+                <li
+                  onClick={() =>
+                    setIsMobileNavVisible((prevValue) => !prevValue)
+                  }
+                >
+                  <button>Commander</button>
+                </li>
               </ul>
-            </>
-          ) : (
-            <ul>
-              <li>
-                <a href="#aboutGame">Le jeu</a>
-              </li>
-              <li>
-                <a href="#graphicsShowcase">Graphismes</a>
-              </li>
-              <li>
-                <a href="#singleGames">Contenu</a>
-              </li>
-            </ul>
+            </HeaderStyle.Navigation>
           )}
-          {isMobile && isMobileNavVisible && (
-            <HeaderStyle.Close
-              src={CloseIcon}
-              alt="Menu"
-              onClick={() => setIsMobileNavVisible((prevValue) => !prevValue)}
-            />
-          )}
-        </HeaderStyle.Navigation>
-        {!isMobile && <button>Commander</button>}
-      </HeaderStyle.HeaderContainer>
-    </HeaderStyle.HeaderWrapper>
+        </HeaderStyle.HeaderContainer>
+      </HeaderStyle.HeaderWrapper>
+    </>
   );
 };
 

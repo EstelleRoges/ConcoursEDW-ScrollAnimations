@@ -7,3 +7,5 @@
 -Sélectionner des images et les renderiser pour les utiliser dans les animations de scroll
 
 - Pour les transitions de l'ancien design au nouveau, traiter les opacités au scroll
+
+- Ne laisser que le logo de TombRaider apparent et ne dévoiler la navbar que quand la sourit va vers elle

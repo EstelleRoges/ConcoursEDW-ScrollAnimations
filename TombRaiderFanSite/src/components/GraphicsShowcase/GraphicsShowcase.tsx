@@ -3,7 +3,7 @@ import * as GraphicsShowcaseStyle from "./GraphicsShowcaseStyle";
 
 const GraphicsShowcase = () => {
   return (
-    <>
+    <article>
     <GraphicsComparison />
     <GraphicsShowcaseStyle.ShowcaseSection id="graphicsShowcase">
       <GraphicsShowcaseStyle.ShowcaseContainer>
@@ -12,7 +12,7 @@ const GraphicsShowcase = () => {
         </GraphicsShowcaseStyle.ShowcaseData>
       </GraphicsShowcaseStyle.ShowcaseContainer>
     </GraphicsShowcaseStyle.ShowcaseSection>
-    </>
+    </article>
   );
 };
 

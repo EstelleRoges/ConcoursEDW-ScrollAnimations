@@ -7,15 +7,18 @@ interface NavModeProps {
 
 export const HeaderWrapper = styled.header<NavModeProps>`
   width: 100%;
-  padding: 1.25rem 2rem;
+  padding: 0.75rem 2rem 1.25rem;
   position: fixed;
-  top: 0;
-  background-image: linear-gradient(
+  z-index: 4;
+  /* background-image: linear-gradient(
     to bottom,
     var(--backgroundColor) 85%,
     transparent 100%
-  );
-  z-index: 5;
+  ); */
+
+  @media (max-width: 768px) {
+       padding: 0.75rem 1rem 1.25rem;
+    }
 
   button {
     padding: 0.5rem 1rem;
@@ -45,52 +48,48 @@ export const HeaderContainer = styled.div`
   position: relative;
 `;
 
-export const LogoContainer = styled.a<NavModeProps>`
-  padding: 0;
-  flex: ${(props: NavModeProps) => (props.$isMobile ? 1 : 0)};
+export const Logo = styled.div`
+  display: block;
+  flex: 1;
+  z-index: 5;
 
   img {
-    margin: ${(props: NavModeProps) => (props.$isMobile ? 0 : "auto")};
+    margin: 0;
     display: block;
     width: 5.5rem;
-    position: relative;
-    z-index: 3;
+    cursor: crosshair;
+    filter: drop-shadow(0 0 3px var(--primary-darker));
+
+    @media (max-width: 768px) {
+      width: 3.5rem;
+    }
   }
 `;
 
-export const Navigation = styled.nav<NavModeProps>`
-  position: relative;
-  ul {
-    margin: 0;
-    padding: 0;
-    width: ${(props: NavModeProps) =>
-      props.$isMobileNavVisible ? "100vw" : "auto"};
-    height: ${(props: NavModeProps) =>
-      props.$isMobileNavVisible ? "100vh" : "auto"};
-    list-style-type: none;
-    display: ${(props: NavModeProps) =>
-      props.$isMobile ? (props.$isMobileNavVisible ? "flex" : "none") : "flex"};
-    flex-direction: ${(props: NavModeProps) =>
-      props.$isMobile ? "column" : "row"};
-    position: ${(props: NavModeProps) =>
-      props.$isMobileNavVisible ? "absolute" : "static"};
-    top: -1.25rem;
-    right: -2rem;
-    background-color: ${(props: NavModeProps) =>
-      props.$isMobile ? `var(--secondary-lighter)` : "transparent"};
-    z-index: 2;
+export const LogoContainer = styled.div<NavModeProps>`
+  padding: 0;
+  flex: ${(props: NavModeProps) => (props.$isMobile ? 1 : 0)};
+  z-index: 5;
+`;
 
-    @media (max-width: 768px) {
-      padding-top: 5rem;
-    }
+export const Navigation = styled.nav<NavModeProps>`
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  ul {
+    width: 100%;
+    flex: 1;
+    margin: 0rem;
+    padding: 7rem 0 0 0;
+    list-style-type: none;
+    background-color: var(--primary-darker);
 
     li {
-      padding: 0 2rem;
-
-      @media (max-width: 768px) {
-        padding: 1rem;
-        text-align: right;
-      }
+      padding: 3rem;
+      text-align: end;
     }
   }
 `;
@@ -100,12 +99,18 @@ export const Passeport = styled.img<NavModeProps>`
   position: relative;
   z-index: 4;
   opacity: ${(props: NavModeProps) => (props.$isMobileNavVisible ? 0 : 1)};
+  filter: drop-shadow(2px 2px 5px var(--backgroundColor));
+
+  @media (max-width: 768px) {
+    width: 26px;
+  }
 `;
 
 export const Close = styled.img`
+  margin: 1.5rem;
   cursor: pointer;
-  position: relative;
-  top: -2.25rem;
-  right: -1.25rem;
+  position: absolute;
+  top: 0;
+  right: 0;
   z-index: 4;
 `;
