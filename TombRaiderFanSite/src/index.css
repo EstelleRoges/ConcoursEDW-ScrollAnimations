@@ -97,3 +97,46 @@ a {
 }
 
 @media (prefers-color-scheme: light) {}
+
+@keyframes byeBoobsTextDisplay {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-25%);
+  }
+  40% {
+    opacity: 0.5;
+    transform: translateX(20px) skewX(-20deg);
+    filter: blur(0);
+  }
+  60% {
+    transform: translateX(20px) skewX(-20deg);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) skewX(0);
+    position: fixed;
+    left: 0;
+    right: 0;
+    filter: blur(0);
+  }
+}
+
+@keyframes byeBoobsTextDisappearance {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(25%);
+  }
+}

@@ -3,7 +3,7 @@ import * as GraphicsComparisonStyle from "./GraphicsComparisonStyle";
 import GraphicsComparisonVideo from "../../../assets/videos/GraphicsChange.mp4";
 
 const GraphicsComparison = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isDisplaying, setIsDisplaying] = useState("");
 
   const graphicsContainer = useRef<HTMLDivElement | null>(null);
   const graphicsText = useRef<HTMLHeadingElement | null>(null);
@@ -20,12 +20,22 @@ const GraphicsComparison = () => {
       //   graphicsContainerRef?.getBoundingClientRect().height / 2;
       console.log(
         `StartingPoint: ${startingPoint}\nText position: ${
-          graphicsText.current?.getBoundingClientRect().top
+          graphicsTextRef.getBoundingClientRect().top
+        }\nContainer height: ${
+          graphicsContainer.current?.getBoundingClientRect().height
         }`
       );
-      if (startingPoint > graphicsTextRef.getBoundingClientRect().top) {
-        setIsActive(!isActive)
-      }
+
+      if (startingPoint > graphicsTextRef.getBoundingClientRect().top - 300) {
+        setIsDisplaying("display");
+      } 
+
+      if (
+        startingPoint >
+        graphicsContainerRef.getBoundingClientRect().height - 800
+      ) {
+         setIsDisplaying("disappear");
+      } 
     }
   };
 
@@ -41,7 +51,10 @@ const GraphicsComparison = () => {
       <video autoPlay muted loop>
         <source src={GraphicsComparisonVideo} type="video/mp4" />
       </video>
-      <GraphicsComparisonStyle.GraphicsText ref={graphicsText} $isActive={isActive}>
+      <GraphicsComparisonStyle.GraphicsText
+        ref={graphicsText}
+        $isDisplaying={isDisplaying}
+      >
         Adieu, poitrine triangulaire
       </GraphicsComparisonStyle.GraphicsText>
     </GraphicsComparisonStyle.ShowcaseContainer>

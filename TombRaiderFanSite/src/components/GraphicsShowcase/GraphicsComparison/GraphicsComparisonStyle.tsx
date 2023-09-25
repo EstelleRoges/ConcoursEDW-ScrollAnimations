@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface GraphicsProps {
-  $isActive?: boolean;
+  $isDisplaying?: string;
 }
 
 export const ShowcaseContainer = styled.article`
@@ -26,11 +26,16 @@ export const GraphicsText = styled.h2<GraphicsProps>`
   text-align: center;
   text-shadow: 0 0 1rem var(--secondary);
   position: relative;
-  top: 50%;
+  top: 40%;
   opacity: 0;
-  filter: blur(3px);
-  transform: translateX(-50%);
-  transition: all 0.3s ease-in-out;
+  filter: blur(5px);
+  transform: translateX(25%);
+  transition: all 0.2s ease-in-out;
 
-  ${({ $isActive }) => $isActive && "opacity: 1;transform: translateX(0); filter: blur(0); position: fixed"}
+  ${({ $isDisplaying }) =>
+     $isDisplaying === 'display'
+      ? "animation: byeBoobsTextDisplay 0.7s 0.5s forwards;"
+      : $isDisplaying === 'disappear'
+      ? "animation: byeBoobsTextDisappearance 1s forwards;"
+      : ""};
 `;
