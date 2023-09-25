@@ -44,12 +44,12 @@ export const HeroData = styled.div`
   z-index: 2;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   mix-blend-mode: normal;
 
   h1 {
-    margin: 6rem 2rem;
+    margin: 2rem auto;
     text-transform: uppercase;
     color: var(--backgroundColor);
     font-size: clamp(3rem, 8vw, 8rem);
@@ -59,5 +59,3 @@ export const HeroData = styled.div`
     z-index: 2;
   }
 `;
-
-export const HeroTitle = styled.div``;
