@@ -22,11 +22,11 @@ const GraphicsComparison = () => {
         const oneThird = endPoint / 3;
         const twoThird = (endPoint * 2) / 3;
 
-        startingPoint >= oneThird
+        startingPoint >= oneThird || startingPoint < twoThird
           ? setIsDisplaying("display")
           : setIsDisplaying("disappear");
 
-        startingPoint >= twoThird
+          startingPoint >= twoThird
           ? setIsDisplaying("disappear")
           : setIsDisplaying("display");
       }

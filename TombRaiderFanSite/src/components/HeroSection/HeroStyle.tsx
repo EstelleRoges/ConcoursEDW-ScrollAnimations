@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const HeroContainer = styled.section`
+z-index: 2;
   background-image: linear-gradient(
     to bottom,
     var(--primary-darker) 97%,

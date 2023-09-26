@@ -4,10 +4,11 @@ interface GraphicsProps {
   $isDisplaying?: string;
 }
 
-export const ShowcaseContainer = styled.article`
-width: 100%;
-  height: 300vh;
+export const ShowcaseContainer = styled.div`
+  width: 100%;
+  height: 250vh;
   position: relative;
+    z-index: -1;
 
   video {
     position: fixed;
@@ -24,8 +25,8 @@ export const GraphicsText = styled.h2<GraphicsProps>`
   color: var(--backgroundColor);
   font-size: clamp(2rem, 5vw, 4rem);
   text-align: center;
-  text-shadow: 0 0 1rem var(--secondary);
-  position: relative;
+  text-shadow: 0 0 0.5rem var(--secondary);
+  position: fixed;
   top: 40%;
   opacity: 0;
   filter: blur(5px);
@@ -33,9 +34,9 @@ export const GraphicsText = styled.h2<GraphicsProps>`
   transition: all 0.2s ease-in-out;
 
   ${({ $isDisplaying }) =>
-     $isDisplaying === 'display'
-      ? "animation: byeBoobsTextDisplay 0.7s 0.5s forwards;"
-      : $isDisplaying === 'disappear'
+    $isDisplaying === "display"
+      ? "animation: byeBoobsTextDisplay 0.7s forwards;"
+      : $isDisplaying === "disappear"
       ? "animation: byeBoobsTextDisappearance 1s forwards;"
       : ""};
 `;

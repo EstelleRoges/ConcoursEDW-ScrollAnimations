@@ -3,7 +3,12 @@ import * as SingleStyle from "./SingleGameSectionStyle";
 const SingleGameSections = () => {
   return (
     <section id="singleGames">
-      <article>SingleGameSections</article>
+      <SingleStyle.ContentArticle>
+        <h2>Ce remaster contiendra:</h2>
+        <p></p>
+        <img src="" alt="" />
+
+      </SingleStyle.ContentArticle>
     </section>
   );
 };

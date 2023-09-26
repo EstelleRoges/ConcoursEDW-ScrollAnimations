@@ -1,7 +1,7 @@
 import * as FooterStyle from "./FooterStyle";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  return <FooterStyle.Footer>Footer</FooterStyle.Footer>;
 };
 
 export default Footer;
