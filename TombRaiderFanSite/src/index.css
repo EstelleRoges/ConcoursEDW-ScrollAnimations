@@ -39,6 +39,7 @@ body {
   color: var(--primary-darker);
   scroll-margin-top: 6rem;
   font-family: var(--main-font);
+  overflow-x: hidden;
 }
 
 h1,

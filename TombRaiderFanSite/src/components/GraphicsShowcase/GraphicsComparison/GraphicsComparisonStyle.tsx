@@ -5,6 +5,7 @@ interface GraphicsProps {
 }
 
 export const ShowcaseContainer = styled.article`
+width: 100%;
   height: 300vh;
   position: relative;
 
@@ -16,7 +17,6 @@ export const ShowcaseContainer = styled.article`
     left: 0;
     right: 0;
     object-fit: cover;
-    z-index: 0;
   }
 `;
 

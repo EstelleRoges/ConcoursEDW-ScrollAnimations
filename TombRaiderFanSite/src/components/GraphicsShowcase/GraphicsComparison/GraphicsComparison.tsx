@@ -13,29 +13,23 @@ const GraphicsComparison = () => {
     const graphicsTextRef = graphicsText.current;
 
     if (graphicsContainerRef && graphicsTextRef) {
-      const startingPoint = Math.abs(
-        graphicsContainerRef.getBoundingClientRect().top
-      );
-      // const triggerPoint =
-      //   graphicsContainerRef?.getBoundingClientRect().height / 2;
-      console.log(
-        `StartingPoint: ${startingPoint}\nText position: ${
-          graphicsTextRef.getBoundingClientRect().top
-        }\nContainer height: ${
-          graphicsContainer.current?.getBoundingClientRect().height
-        }`
-      );
+      if (graphicsContainerRef.getBoundingClientRect().top <= 0) {
+        const startingPoint = Math.abs(
+          graphicsContainerRef.getBoundingClientRect().top
+        );
+        const endPoint = graphicsContainerRef.getBoundingClientRect().height;
 
-      if (startingPoint > graphicsTextRef.getBoundingClientRect().top - 300) {
-        setIsDisplaying("display");
-      } 
+        const oneThird = endPoint / 3;
+        const twoThird = (endPoint * 2) / 3;
 
-      if (
-        startingPoint >
-        graphicsContainerRef.getBoundingClientRect().height - 800
-      ) {
-         setIsDisplaying("disappear");
-      } 
+        startingPoint >= oneThird
+          ? setIsDisplaying("display")
+          : setIsDisplaying("disappear");
+
+        startingPoint >= twoThird
+          ? setIsDisplaying("disappear")
+          : setIsDisplaying("display");
+      }
     }
   };
 
