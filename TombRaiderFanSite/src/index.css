@@ -131,7 +131,7 @@ a {
 @keyframes byeBoobsTextDisappearance {
   0% {
     opacity: 1;
-    transform: translateX(0);
+    transform: none;
     filter: blur(0);
     left: 0;
     right: 0;
@@ -150,12 +150,12 @@ a {
   }
 }
 
-@keyframes imageGradient {
-  0% {
-    background-position: 0% 0%;
+.displayAnimation {
+  animation: imageGradient 1s forwards;
   }
 
+@keyframes imageGradient {
   100% {
-    background-position: -200% 0%;
+    background-position-x: -100%;
   }
 }
