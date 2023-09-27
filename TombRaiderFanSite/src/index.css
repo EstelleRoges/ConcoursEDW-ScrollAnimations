@@ -55,25 +55,26 @@ h6 {
 section {
   width: 100%;
   background-color: var(--backgroundColor);
-  position: relative;
-  /* z-index: 1; */
-  /* scroll-snap-type: y mandatory; */
 
-  & article {
-    margin: auto;
-    padding: 4rem;
-    max-width: 1280px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    scroll-snap-align: center;
-  }
+}
 
-  & article h2 {
+section > article {
+  margin: auto;
+  padding: 4rem 3rem;
+  max-width: 1280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: center;
+
+  h2 {
     font-size: 2rem;
   }
 
+  @media(max-width: 768px) {
+    padding: 0.5rem;
+  }
 }
 
 p {
@@ -97,7 +98,7 @@ a {
   }
 }
 
-@media (prefers-color-scheme: light) {}
+/* @media (prefers-color-scheme: light) {} */
 
 @keyframes byeBoobsTextDisplay {
   0% {
@@ -150,12 +151,14 @@ a {
   }
 }
 
-.displayAnimation {
-  animation: imageGradient 1s forwards;
-  }
-
-@keyframes imageGradient {
+@keyframes imageGradientToRight {
   100% {
     background-position-x: -100%;
+  }
+}
+
+@keyframes imageGradientToLeft {
+  100% {
+    background-position-x: 100%;
   }
 }

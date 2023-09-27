@@ -14,15 +14,14 @@ const GraphicsShowcase = () => {
   const [isTr1ContainerDisplayed, setIsTr1ContainerDisplayed] = useState(false);
   const [isTr2ContainerDisplayed, setIsTr2ContainerDisplayed] = useState(false);
   const [isTr3ContainerDisplayed, setIsTr3ContainerDisplayed] = useState(false);
-  const [isTrContainerDisplayed, setIsTrContainerDisplayed] = useState(false);
 
-  console.log(isTrContainerDisplayed);
   const observeAndDisplay = (
     containerToObserve: RefObject<HTMLDivElement | null>,
     setState: React.Dispatch<React.SetStateAction<S>>
   ) => {
     const observer = new IntersectionObserver(
       (entries) => {
+        console.log(entries);
         if (containerToObserve.current && entries[0].isIntersecting) {
           const elementToDisplay = entries[0].target as HTMLDivElement;
           setState(true);
@@ -48,9 +47,9 @@ const GraphicsShowcase = () => {
   };
 
   useEffect(() => {
-    observeAndDisplay(tr1Container, setIsTrContainerDisplayed);
-    observeAndDisplay(tr2Container, setIsTrContainerDisplayed);
-    observeAndDisplay(tr3Container, setIsTrContainerDisplayed);
+    observeAndDisplay(tr1Container, setIsTr1ContainerDisplayed);
+    observeAndDisplay(tr2Container, setIsTr2ContainerDisplayed);
+    observeAndDisplay(tr3Container, setIsTr3ContainerDisplayed);
   }, []);
 
   return (
@@ -60,7 +59,7 @@ const GraphicsShowcase = () => {
         <GraphicsShowcaseStyle.ShowcaseContainer>
           <GraphicsShowcaseStyle.SingleGameCatchphrase
             ref={tr1Container}
-            $isTrContainerDisplayed={isTrContainerDisplayed}
+            $isTrContainerDisplayed={isTr1ContainerDisplayed}
           >
             <p>
               Partez à la recherche du Scion, artefact puissant au savoir
@@ -68,26 +67,41 @@ const GraphicsShowcase = () => {
             </p>
             <GraphicsShowcaseStyle.TrImage>
               <GraphicsShowcaseStyle.Gradient
-                $isTrContainerDisplayed={isTrContainerDisplayed}
+                $isTrContainerDisplayed={isTr1ContainerDisplayed}
+                $index={1}
               />
               <img src={screenshot_tr1} alt="newGraphicsScreenshots_1" />
             </GraphicsShowcaseStyle.TrImage>
           </GraphicsShowcaseStyle.SingleGameCatchphrase>
-          <GraphicsShowcaseStyle.SingleGameCatchphrase ref={tr2Container}>
+          <GraphicsShowcaseStyle.SingleGameCatchphrase
+            ref={tr2Container}
+            $isTrContainerDisplayed={isTr2ContainerDisplayed}
+          >
             <p>
               Retrouvez la la dague de Xian avant qu'elle ne tombe entre de
               mauvaise mains
             </p>
             <GraphicsShowcaseStyle.TrImage>
+              <GraphicsShowcaseStyle.Gradient
+                $isTrContainerDisplayed={isTr2ContainerDisplayed}
+                $index={2}
+              />
               <img src={screenshot_tr2} alt="newGraphicsScreenshots_2" />
             </GraphicsShowcaseStyle.TrImage>
           </GraphicsShowcaseStyle.SingleGameCatchphrase>
-          <GraphicsShowcaseStyle.SingleGameCatchphrase ref={tr3Container}>
+          <GraphicsShowcaseStyle.SingleGameCatchphrase
+            ref={tr3Container}
+            $isTrContainerDisplayed={isTr3ContainerDisplayed}
+          >
             <p>
               Parcourez le monde à la recherche de mystérieux artefacts et
               perçez leurs secrets
             </p>
             <GraphicsShowcaseStyle.TrImage>
+              <GraphicsShowcaseStyle.Gradient
+                $isTrContainerDisplayed={isTr3ContainerDisplayed}
+                $index={3}
+              />
               <img src={screenshot_tr3} alt="newGraphicsScreenshots_3" />
             </GraphicsShowcaseStyle.TrImage>
           </GraphicsShowcaseStyle.SingleGameCatchphrase>
