@@ -1,4 +1,4 @@
-import { RefObject, useState, useEffect, useRef, SetStateAction } from "react";
+import { RefObject, useState, useEffect, useRef } from "react";
 import { GraphicsComparison } from "../ComponentsIndex";
 import * as GraphicsShowcaseStyle from "./GraphicsShowcaseStyle";
 
@@ -15,16 +15,26 @@ const GraphicsShowcase = () => {
   const [isTr2ContainerDisplayed, setIsTr2ContainerDisplayed] = useState(false);
   const [isTr3ContainerDisplayed, setIsTr3ContainerDisplayed] = useState(false);
 
+  const [isTr1TextDisplaying, setIsTr1TextDisplaying] = useState(false);
+  const [isTr2TextDisplaying, setIsTr2TextDisplaying] = useState(false);
+  const [isTr3TextDisplaying, setIsTr3TextDisplaying] = useState(false);
+
   const observeAndDisplay = (
     containerToObserve: RefObject<HTMLDivElement | null>,
-    setState: React.Dispatch<React.SetStateAction<S>>
+    setState: React.Dispatch<React.SetStateAction<boolean>>,
+    setTextState: React.Dispatch<React.SetStateAction<boolean>>
   ) => {
     const observer = new IntersectionObserver(
       (entries) => {
-        console.log(entries);
         if (containerToObserve.current && entries[0].isIntersecting) {
           const elementToDisplay = entries[0].target as HTMLDivElement;
           setState(true);
+          if (
+            elementToDisplay.getBoundingClientRect().top <
+            elementToDisplay.getBoundingClientRect().height / 2
+          ) {
+            setTextState(true);
+          }
           elementToDisplay.style.animation = "imageGradient";
           observer.unobserve(elementToDisplay);
         }
@@ -36,20 +46,20 @@ const GraphicsShowcase = () => {
       }
     );
 
-    containerToObserve && observer.observe(containerToObserve.current);
-    setState(false);
+    containerToObserve.current && observer.observe(containerToObserve.current);
 
     return () => {
-      if (containerToObserve) {
+      containerToObserve.current &&
         observer.unobserve(containerToObserve.current);
-      }
+    setState(false);
+     setTextState(false);
     };
   };
 
   useEffect(() => {
-    observeAndDisplay(tr1Container, setIsTr1ContainerDisplayed);
-    observeAndDisplay(tr2Container, setIsTr2ContainerDisplayed);
-    observeAndDisplay(tr3Container, setIsTr3ContainerDisplayed);
+    observeAndDisplay(tr1Container, setIsTr1ContainerDisplayed, setIsTr1TextDisplaying);
+    observeAndDisplay(tr2Container, setIsTr2ContainerDisplayed, setIsTr2TextDisplaying);
+    observeAndDisplay(tr3Container, setIsTr3ContainerDisplayed, setIsTr3TextDisplaying);
   }, []);
 
   return (
@@ -60,9 +70,11 @@ const GraphicsShowcase = () => {
           <GraphicsShowcaseStyle.SingleGameCatchphrase
             ref={tr1Container}
             $isTrContainerDisplayed={isTr1ContainerDisplayed}
+            $isTextDisplaying={isTr1TextDisplaying}
+            $index={1}
           >
             <p>
-              Partez à la recherche du Scion, artefact puissant au savoir
+              Partez en quête du Scion, artefact puissant au savoir
               millénaire
             </p>
             <GraphicsShowcaseStyle.TrImage>
@@ -76,6 +88,8 @@ const GraphicsShowcase = () => {
           <GraphicsShowcaseStyle.SingleGameCatchphrase
             ref={tr2Container}
             $isTrContainerDisplayed={isTr2ContainerDisplayed}
+            $isTextDisplaying={isTr2TextDisplaying}
+            $index={2}
           >
             <p>
               Retrouvez la la dague de Xian avant qu'elle ne tombe entre de
@@ -92,6 +106,8 @@ const GraphicsShowcase = () => {
           <GraphicsShowcaseStyle.SingleGameCatchphrase
             ref={tr3Container}
             $isTrContainerDisplayed={isTr3ContainerDisplayed}
+            $isTextDisplaying={isTr3TextDisplaying}
+            $index={3}
           >
             <p>
               Parcourez le monde à la recherche de mystérieux artefacts et

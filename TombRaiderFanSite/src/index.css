@@ -162,3 +162,9 @@ a {
     background-position-x: 100%;
   }
 }
+
+@keyframes textDisplay {
+  100% {
+transform: translateY(0);
+  }
+}

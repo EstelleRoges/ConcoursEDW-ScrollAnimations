@@ -1,23 +1,19 @@
 import styled from "styled-components";
 
-// import screenshot_tr1 from "../../assets/images/Tr1Image.jpg";
-// import screenshot_tr2 from "../../assets/images/Tr2Image.jpg";
-// import screenshot_tr3 from "../../assets/images/Tr3Image.jpg";
-
 interface SingleGameProps {
   $isTrContainerDisplayed: boolean;
   $index?: number;
+  $isTextDisplaying?: boolean;
 }
 
 export const ShowcaseSection = styled.section`
   @media (max-width: 576px) {
-    width: 100vw;
-    min-height: fit-content;
+    padding-top: 5rem;
   }
 `;
 export const ShowcaseContainer = styled.article`
   @media (max-width: 576px) {
-    padding: 2rem;
+    padding: 2rem 0.5rem;
   }
 `;
 
@@ -28,36 +24,34 @@ export const SingleGameCatchphrase = styled.div<SingleGameProps>`
   opacity: ${({ $isTrContainerDisplayed }) =>
     $isTrContainerDisplayed ? 1 : 0};
   display: flex;
+  justify-content: center;
+  align-items: center;
   transition: opacity 0.3s ease-out;
+  transition: opacity 1s forwards, transform 1s forwards;
 
   @media (max-width: 576px) {
-    width: 100vw;
-    height: auto;
-    transform: rotate(90deg);
+    gap: 2rem;
   }
 
   p {
     width: 40%;
     position: absolute;
-    inset: 3rem 0 0 3rem;
     color: var(--backgroundColor);
+    text-align: center;
     font-weight: 700;
-    font-size: clamp(1rem, 3vw, 2rem);
+    font-size: clamp(1.3rem, 3vw, 2rem);
     font-style: italic;
     text-shadow: 0 0 0.3rem var(--backgroundColor);
     z-index: 2;
     line-height: 1.5;
+    transform: ${({ $index }) =>
+      $index! % 2 === 0 ? "translateY(-3rem);" : "translateY(3rem);"};
+    animation: ${({ $isTextDisplaying }) =>
+      $isTextDisplaying ? "textDisplay 1s 0.2s forwards" : null};
 
     @media (max-width: 576px) {
-      width: 60%;
-      inset: 1rem 0 0 2rem;
+      width: 70%;
     }
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
   }
 `;
 
@@ -77,9 +71,16 @@ export const TrImage = styled.div`
     box-shadow: inset 0 0 0.5rem 1rem var(--backgroundColor);
     backdrop-filter: brightness(70%);
   }
-  /* @media (max-width: 576px) {
-  flex: 1;
-} */
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  @media (max-width: 576px) {
+    transform: rotate(90deg) scale(1.8);
+  }
 `;
 
 export const Gradient = styled.div<SingleGameProps>`
