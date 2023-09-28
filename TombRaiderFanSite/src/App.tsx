@@ -15,7 +15,7 @@ function App() {
       <HeroSection />
       <GamePresentation />
       <GraphicsShowcase />
-      {/* <SingleGameSections /> */}
+      <SingleGameSections />
       <Footer />
     </LayoutMain>
   );

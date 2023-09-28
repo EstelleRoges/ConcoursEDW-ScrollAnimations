@@ -51,15 +51,27 @@ const GraphicsShowcase = () => {
     return () => {
       containerToObserve.current &&
         observer.unobserve(containerToObserve.current);
-    setState(false);
-     setTextState(false);
+      setState(false);
+      setTextState(false);
     };
   };
 
   useEffect(() => {
-    observeAndDisplay(tr1Container, setIsTr1ContainerDisplayed, setIsTr1TextDisplaying);
-    observeAndDisplay(tr2Container, setIsTr2ContainerDisplayed, setIsTr2TextDisplaying);
-    observeAndDisplay(tr3Container, setIsTr3ContainerDisplayed, setIsTr3TextDisplaying);
+    observeAndDisplay(
+      tr1Container,
+      setIsTr1ContainerDisplayed,
+      setIsTr1TextDisplaying
+    );
+    observeAndDisplay(
+      tr2Container,
+      setIsTr2ContainerDisplayed,
+      setIsTr2TextDisplaying
+    );
+    observeAndDisplay(
+      tr3Container,
+      setIsTr3ContainerDisplayed,
+      setIsTr3TextDisplaying
+    );
   }, []);
 
   return (
@@ -74,8 +86,7 @@ const GraphicsShowcase = () => {
             $index={1}
           >
             <p>
-              Partez en quête du Scion, artefact puissant au savoir
-              millénaire
+              Partez en quête du Scion, artefact puissant au savoir millénaire
             </p>
             <GraphicsShowcaseStyle.TrImage>
               <GraphicsShowcaseStyle.Gradient
