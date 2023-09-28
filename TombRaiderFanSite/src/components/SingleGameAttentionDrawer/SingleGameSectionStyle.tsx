@@ -119,7 +119,6 @@ export const TextContainer = styled.div`
   span {
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     text-transform: uppercase;
-    /* white-space: nowrap; */
     letter-spacing: 1px;
   }
 
@@ -140,18 +139,17 @@ export const ExtraData = styled.div`
     padding: 0;
     list-style: none;
   }
-
-
 `;
 
 export const ExtraDataInfo = styled.li<ContentProps>`
- margin: 4rem 0;
-    font-size: 1.25rem;
-     transition: 0.4s 0.45s ease-out;
-    opacity: ${({ $isElementDisplayed }) => ($isElementDisplayed ? 1 : 0)};
-    transform: ${({ $isElementDisplayed }) => ($isElementDisplayed ? "scale(1)" : "scale(0)")};
+  margin: 4rem 0;
+  font-size: 1.25rem;
+  transition: 0.4s 0.45s ease-out;
+  opacity: ${({ $isElementDisplayed }) => ($isElementDisplayed ? 1 : 0)};
+  transform: ${({ $isElementDisplayed }) =>
+    $isElementDisplayed ? "scale(1)" : "scale(0)"};
 
-    @media (max-width: 578px) {
-      text-align: center;
-    }
-`
+  @media (max-width: 578px) {
+    text-align: center;
+  }
+`;

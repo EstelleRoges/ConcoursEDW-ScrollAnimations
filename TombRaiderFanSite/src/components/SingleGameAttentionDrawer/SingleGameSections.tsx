@@ -31,7 +31,7 @@ const SingleGameSections = () => {
     observeAndDisplay(tr3ContentContainer, setIsTr3CardDisplayed);
     observeAndDisplay(extraData1, setIsExtraData1Displayed);
     observeAndDisplay(extraData2, setIsExtraData2Displayed);
-  }, []);
+  }, [observeAndDisplay]);
 
   return (
     <section id="singleGames">
