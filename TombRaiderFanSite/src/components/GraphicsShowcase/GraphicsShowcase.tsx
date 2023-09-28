@@ -1,5 +1,8 @@
-import { RefObject, useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import useObserver from "../../utils/hooks/useObserver";
+
 import { GraphicsComparison } from "../ComponentsIndex";
+
 import * as GraphicsShowcaseStyle from "./GraphicsShowcaseStyle";
 
 import screenshot_tr1 from "../../assets/images/Tr1Image.jpg";
@@ -11,50 +14,15 @@ const GraphicsShowcase = () => {
   const tr2Container = useRef<HTMLDivElement | null>(null);
   const tr3Container = useRef<HTMLDivElement | null>(null);
 
-  const [isTr1ContainerDisplayed, setIsTr1ContainerDisplayed] = useState(false);
-  const [isTr2ContainerDisplayed, setIsTr2ContainerDisplayed] = useState(false);
-  const [isTr3ContainerDisplayed, setIsTr3ContainerDisplayed] = useState(false);
+  const [isTr1ContainerDisplayed, setIsTr1ContainerDisplayed] = useState<boolean>(false);
+  const [isTr2ContainerDisplayed, setIsTr2ContainerDisplayed] = useState<boolean>(false);
+  const [isTr3ContainerDisplayed, setIsTr3ContainerDisplayed] = useState<boolean>(false);
 
-  const [isTr1TextDisplaying, setIsTr1TextDisplaying] = useState(false);
-  const [isTr2TextDisplaying, setIsTr2TextDisplaying] = useState(false);
-  const [isTr3TextDisplaying, setIsTr3TextDisplaying] = useState(false);
+  const [isTr1TextDisplaying, setIsTr1TextDisplaying] = useState<boolean>(false);
+  const [isTr2TextDisplaying, setIsTr2TextDisplaying] = useState<boolean>(false);
+  const [isTr3TextDisplaying, setIsTr3TextDisplaying] = useState<boolean>(false);
 
-  const observeAndDisplay = (
-    containerToObserve: RefObject<HTMLDivElement | null>,
-    setState: React.Dispatch<React.SetStateAction<boolean>>,
-    setTextState: React.Dispatch<React.SetStateAction<boolean>>
-  ) => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (containerToObserve.current && entries[0].isIntersecting) {
-          const elementToDisplay = entries[0].target as HTMLDivElement;
-          setState(true);
-          if (
-            elementToDisplay.getBoundingClientRect().top <
-            elementToDisplay.getBoundingClientRect().height / 2
-          ) {
-            setTextState(true);
-          }
-          elementToDisplay.style.animation = "imageGradient";
-          observer.unobserve(elementToDisplay);
-        }
-      },
-      {
-        root: null,
-        threshold: 0.6,
-        rootMargin: "0px",
-      }
-    );
-
-    containerToObserve.current && observer.observe(containerToObserve.current);
-
-    return () => {
-      containerToObserve.current &&
-        observer.unobserve(containerToObserve.current);
-      setState(false);
-      setTextState(false);
-    };
-  };
+const {observeAndDisplay} = useObserver();
 
   useEffect(() => {
     observeAndDisplay(

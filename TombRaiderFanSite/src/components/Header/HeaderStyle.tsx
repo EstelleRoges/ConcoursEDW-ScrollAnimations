@@ -17,7 +17,7 @@ export const HeaderWrapper = styled.header<NavModeProps>`
   ); */
 
   @media (max-width: 768px) {
-       padding: 0.75rem 1rem 1.25rem;
+       padding: 1.5rem;
     }
 
   button {
@@ -61,7 +61,7 @@ export const Logo = styled.div`
     filter: drop-shadow(0 0 3px var(--primary-darker));
 
     @media (max-width: 768px) {
-      width: 3.5rem;
+      width: 4.5rem;
     }
   }
 `;

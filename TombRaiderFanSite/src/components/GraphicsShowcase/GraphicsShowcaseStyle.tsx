@@ -13,7 +13,7 @@ export const ShowcaseSection = styled.section`
 `;
 export const ShowcaseContainer = styled.article`
   @media (max-width: 576px) {
-    padding: 2rem 0.5rem;
+    padding: 3rem  ;
   }
 `;
 
