@@ -8,6 +8,8 @@ import tr2Img from "../../assets/images/Tr2Render_4.png";
 import tr3Img from "../../assets/images/Tr3Render_5.png";
 
 const SingleGameSections = () => {
+  const contentTitle = useRef<HTMLHeadingElement | null>(null);
+
   const tr1ContentContainer = useRef<HTMLLIElement | null>(null);
   const tr2ContentContainer = useRef<HTMLLIElement | null>(null);
   const tr3ContentContainer = useRef<HTMLLIElement | null>(null);
@@ -15,6 +17,7 @@ const SingleGameSections = () => {
   const extraData1 = useRef<HTMLLIElement | null>(null);
   const extraData2 = useRef<HTMLLIElement | null>(null);
 
+  const [isContentTitleDisplayed, setIsContentTitleDisplayed] = useState(false);
   const [isTr1CardDisplayed, setIsTr1CardDisplayed] = useState<boolean>(false);
   const [isTr2CardDisplayed, setIsTr2CardDisplayed] = useState<boolean>(false);
   const [isTr3CardDisplayed, setIsTr3CardDisplayed] = useState<boolean>(false);
@@ -26,6 +29,7 @@ const SingleGameSections = () => {
   const { observeAndDisplay } = useObserver();
 
   useEffect(() => {
+    observeAndDisplay(contentTitle, setIsContentTitleDisplayed);
     observeAndDisplay(tr1ContentContainer, setIsTr1CardDisplayed);
     observeAndDisplay(tr2ContentContainer, setIsTr2CardDisplayed);
     observeAndDisplay(tr3ContentContainer, setIsTr3CardDisplayed);
@@ -35,8 +39,13 @@ const SingleGameSections = () => {
 
   return (
     <section id="singleGames">
-      <SingleStyle.ContentArticle>
-        <h2>Contenu de la collection</h2>
+      <article>
+        <SingleStyle.ContentTitle
+          ref={contentTitle}
+          $isElementDisplayed={isContentTitleDisplayed}
+        >
+          Contenu de la collection
+        </SingleStyle.ContentTitle>
         <SingleStyle.ContentList>
           <SingleStyle.ContentListItem
             ref={tr1ContentContainer}
@@ -101,7 +110,7 @@ const SingleGameSections = () => {
             <li></li>
           </ul>
         </SingleStyle.ExtraData>
-      </SingleStyle.ContentArticle>
+      </article>
     </section>
   );
 };

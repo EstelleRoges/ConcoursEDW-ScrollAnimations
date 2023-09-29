@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+import screenshot_tr1 from "../../assets/images/Tr1Image.jpg";
+import screenshot_tr2 from "../../assets/images/Tr2Image.jpg";
+import screenshot_tr3 from "../../assets/images/Tr3Image.jpg";
+
 interface SingleGameProps {
   $isTrContainerDisplayed: boolean;
   $index?: number;
@@ -13,7 +17,7 @@ export const ShowcaseSection = styled.section`
 `;
 export const ShowcaseContainer = styled.article`
   @media (max-width: 576px) {
-    padding: 3rem  ;
+    padding: 3rem 1rem;
   }
 `;
 
@@ -26,12 +30,7 @@ export const SingleGameCatchphrase = styled.div<SingleGameProps>`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 0.3s ease-out;
-  transition: opacity 1s forwards, transform 1s forwards;
-
-  @media (max-width: 576px) {
-    gap: 2rem;
-  }
+  transition: opacity 0.3s ease-out, transform 1s ease-out;
 
   p {
     width: 40%;
@@ -56,6 +55,7 @@ export const SingleGameCatchphrase = styled.div<SingleGameProps>`
 `;
 
 export const TrImage = styled.div`
+  flex: 1;
   width: 100%;
   height: auto;
   position: relative;
@@ -74,12 +74,23 @@ export const TrImage = styled.div`
 
   img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
+    transform-origin: center;
+    transform: scale(0.99);
+
+    @media (max-width: 578px) {
+      width: 100vh;
+      height: 100vw;
+      object-fit: cover;
+    }
   }
-  @media (max-width: 576px) {
-    transform: rotate(90deg) scale(1.8);
+
+  @media (max-width: 578px) {
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(90deg);
   }
 `;
 

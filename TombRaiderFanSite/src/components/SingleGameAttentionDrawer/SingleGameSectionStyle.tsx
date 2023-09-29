@@ -4,13 +4,15 @@ interface ContentProps {
   $isElementDisplayed?: boolean;
 }
 
-export const ContentArticle = styled.article`
-  h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+export const ContentTitle = styled.h2<ContentProps>`
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  opacity: ${({ $isElementDisplayed }) => ($isElementDisplayed ? 1 : 0)};
+  transform: ${({ $isElementDisplayed }) =>
+    $isElementDisplayed ? "translateX(0)" : "translateX(-2rem)"};
+  transition: 0.4s ease-out;
 
-    @media (max-width: 578px) {
-      text-align: center;
-    }
+  @media (max-width: 578px) {
+    text-align: center;
   }
 `;
 
