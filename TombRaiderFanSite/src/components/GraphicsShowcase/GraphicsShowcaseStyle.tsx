@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-import screenshot_tr1 from "../../assets/images/Tr1Image.jpg";
-import screenshot_tr2 from "../../assets/images/Tr2Image.jpg";
-import screenshot_tr3 from "../../assets/images/Tr3Image.jpg";
-
 interface SingleGameProps {
   $isTrContainerDisplayed: boolean;
   $index?: number;
