@@ -2,8 +2,9 @@ import {
   Header,
   HeroSection,
   GamePresentation,
-  GraphicsShowcase,
-  SingleGameSections,
+  GameCatchArguments,
+  ContentInfo,
+  PreOrderSection,
   Footer,
 } from "./components/ComponentsIndex";
 import styled from "styled-components";
@@ -14,8 +15,9 @@ function App() {
       <Header />
       <HeroSection />
       <GamePresentation />
-      <GraphicsShowcase />
-      <SingleGameSections />
+      <GameCatchArguments />
+      <ContentInfo />
+      <PreOrderSection />
       <Footer />
     </LayoutMain>
   );

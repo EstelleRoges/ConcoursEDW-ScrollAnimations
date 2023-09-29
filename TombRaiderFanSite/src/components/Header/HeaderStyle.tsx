@@ -10,22 +10,17 @@ export const HeaderWrapper = styled.header<NavModeProps>`
   padding: 0.75rem 2rem 1.25rem;
   position: fixed;
   z-index: 4;
-  /* background-image: linear-gradient(
-    to bottom,
-    var(--backgroundColor) 85%,
-    transparent 100%
-  ); */
 
   @media (max-width: 768px) {
-       padding: 1.5rem;
-    }
+    padding: 1.5rem;
+  }
 
   button {
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 0.25rem;
     outline: transparent;
-    background-color: var(--tertiary);
+    background-color: var(--secondary);
     color: var(--backgroundColor);
     font-size: 1rem;
     font-family: var(--title-font);
@@ -35,8 +30,16 @@ export const HeaderWrapper = styled.header<NavModeProps>`
     order: 2;
 
     &:hover {
-      box-shadow: 0 2px 0.3rem var(--tertiary);
+      box-shadow: 0 2px 0.3rem var(--secondary-lighter);
       transform: translateY(-4px);
+    }
+
+    a {
+      color: var(--backgroundColor);
+
+      &:hover {
+       text-shadow: 0 0 0.65rem var(--secondary-lighter);
+    }
     }
   }
 `;

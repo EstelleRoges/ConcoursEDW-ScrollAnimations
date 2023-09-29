@@ -3,6 +3,7 @@ export {default as Footer} from "./Footer/Footer";
 
 export {default as HeroSection} from "./HeroSection/HeroSection";
 export {default as GamePresentation} from "./GamePresentation/GamePresentation";
-export {default as GraphicsShowcase} from "./GraphicsShowcase/GraphicsShowcase";
-export {default as GraphicsComparison} from "./GraphicsShowcase/GraphicsComparison/GraphicsComparison";
-export {default as SingleGameSections} from "./SingleGameAttentionDrawer/SingleGameSections";
+export {default as GameCatchArguments} from "./GameCatchArguments/GameCatchArguments";
+export {default as GraphicsComparison} from "./GameCatchArguments/GraphicsComparison/GraphicsComparison";
+export {default as ContentInfo} from "./CollectionContent/ContentInfo";
+export {default as PreOrderSection} from "./PreOrderSection/PreOrderSection";

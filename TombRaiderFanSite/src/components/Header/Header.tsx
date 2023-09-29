@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+
 import * as HeaderStyle from "./HeaderStyle";
+
 import Logo from "../../assets/images/TrLogoTitleOnly.png";
 import PassportIcon from "../../assets/svg/trPassportIcon.svg";
 import CloseIcon from "../../assets/svg/closeIcon.svg";
@@ -74,7 +76,9 @@ const Header = () => {
                     setIsMobileNavVisible((prevValue) => !prevValue)
                   }
                 >
-                  <button>Commander</button>
+                  <button onClick={() =>
+                    setIsMobileNavVisible((prevValue) => !prevValue)
+                  }><a href="#preorder">Pré-commander</a> </button>
                 </li>
               </ul>
             </HeaderStyle.Navigation>

@@ -5,7 +5,8 @@ interface ContentProps {
 }
 
 export const ContentTitle = styled.h2<ContentProps>`
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 3.25rem);
   opacity: ${({ $isElementDisplayed }) => ($isElementDisplayed ? 1 : 0)};
   transform: ${({ $isElementDisplayed }) =>
     $isElementDisplayed ? "translateX(0)" : "translateX(-2rem)"};
@@ -20,7 +21,6 @@ export const ContentList = styled.ul`
   margin: 0 0 6rem 0;
   padding: 0;
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-evenly;
   align-items: stretch;
   gap: 0.5rem;
@@ -43,6 +43,7 @@ export const ContentListItem = styled.li<ContentProps>`
   background-color: var(--primary-darker);
   text-align: center;
   font-family: var(--title-font);
+  box-shadow: 0 0 0.5rem var(--primary), 0 0 0.25rem var(--primary), 0 0 0.25rem var(--primary);
   opacity: ${({ $isElementDisplayed }) => ($isElementDisplayed ? 1 : 0)};
   transition: 0.4s ease-out;
 

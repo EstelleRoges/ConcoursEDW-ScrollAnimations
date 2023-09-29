@@ -3,13 +3,13 @@ import useObserver from "../../utils/hooks/useObserver";
 
 import { GraphicsComparison } from "../ComponentsIndex";
 
-import * as GraphicsShowcaseStyle from "./GraphicsShowcaseStyle";
+import * as CatchStyle from "./GameCatchArgumentsStyle";
 
 import screenshot_tr1 from "../../assets/images/Tr1Image.jpg";
 import screenshot_tr2 from "../../assets/images/Tr2Image.jpg";
 import screenshot_tr3 from "../../assets/images/Tr3Image.jpg";
 
-const GraphicsShowcase = () => {
+const GameCatchArguments = () => {
   const tr1Container = useRef<HTMLDivElement | null>(null);
   const tr2Container = useRef<HTMLDivElement | null>(null);
   const tr3Container = useRef<HTMLDivElement | null>(null);
@@ -43,11 +43,11 @@ const {observeAndDisplay} = useObserver();
   }, []);
 
   return (
-    <div id="graphicsShowcase">
+    <div id="GameCatchArguments">
       <GraphicsComparison />
-      <GraphicsShowcaseStyle.ShowcaseSection>
-        <GraphicsShowcaseStyle.ShowcaseContainer>
-          <GraphicsShowcaseStyle.SingleGameCatchphrase
+      <CatchStyle.CatchSection>
+        <CatchStyle.CatchContainer>
+          <CatchStyle.SingleGameCatchphrase
             ref={tr1Container}
             $isTrContainerDisplayed={isTr1ContainerDisplayed}
             $isTextDisplaying={isTr1TextDisplaying}
@@ -56,15 +56,15 @@ const {observeAndDisplay} = useObserver();
             <p>
               Partez en quête du Scion, artefact puissant au savoir millénaire
             </p>
-            <GraphicsShowcaseStyle.TrImage>
-              <GraphicsShowcaseStyle.Gradient
+            <CatchStyle.TrImage>
+              <CatchStyle.Gradient
                 $isTrContainerDisplayed={isTr1ContainerDisplayed}
                 $index={1}
               />
               <img src={screenshot_tr1} alt="newGraphicsScreenshots_1" />
-            </GraphicsShowcaseStyle.TrImage>
-          </GraphicsShowcaseStyle.SingleGameCatchphrase>
-          <GraphicsShowcaseStyle.SingleGameCatchphrase
+            </CatchStyle.TrImage>
+          </CatchStyle.SingleGameCatchphrase>
+          <CatchStyle.SingleGameCatchphrase
             ref={tr2Container}
             $isTrContainerDisplayed={isTr2ContainerDisplayed}
             $isTextDisplaying={isTr2TextDisplaying}
@@ -74,15 +74,15 @@ const {observeAndDisplay} = useObserver();
               Retrouvez la la dague de Xian avant qu'elle ne tombe entre de
               mauvaise mains
             </p>
-            <GraphicsShowcaseStyle.TrImage>
-              <GraphicsShowcaseStyle.Gradient
+            <CatchStyle.TrImage>
+              <CatchStyle.Gradient
                 $isTrContainerDisplayed={isTr2ContainerDisplayed}
                 $index={2}
               />
               <img src={screenshot_tr2} alt="newGraphicsScreenshots_2" />
-            </GraphicsShowcaseStyle.TrImage>
-          </GraphicsShowcaseStyle.SingleGameCatchphrase>
-          <GraphicsShowcaseStyle.SingleGameCatchphrase
+            </CatchStyle.TrImage>
+          </CatchStyle.SingleGameCatchphrase>
+          <CatchStyle.SingleGameCatchphrase
             ref={tr3Container}
             $isTrContainerDisplayed={isTr3ContainerDisplayed}
             $isTextDisplaying={isTr3TextDisplaying}
@@ -92,18 +92,18 @@ const {observeAndDisplay} = useObserver();
               Parcourez le monde à la recherche de mystérieux artefacts et
               perçez leurs secrets
             </p>
-            <GraphicsShowcaseStyle.TrImage>
-              <GraphicsShowcaseStyle.Gradient
+            <CatchStyle.TrImage>
+              <CatchStyle.Gradient
                 $isTrContainerDisplayed={isTr3ContainerDisplayed}
                 $index={3}
               />
               <img src={screenshot_tr3} alt="newGraphicsScreenshots_3" />
-            </GraphicsShowcaseStyle.TrImage>
-          </GraphicsShowcaseStyle.SingleGameCatchphrase>
-        </GraphicsShowcaseStyle.ShowcaseContainer>
-      </GraphicsShowcaseStyle.ShowcaseSection>
+            </CatchStyle.TrImage>
+          </CatchStyle.SingleGameCatchphrase>
+        </CatchStyle.CatchContainer>
+      </CatchStyle.CatchSection>
     </div>
   );
 };
 
-export default GraphicsShowcase;
+export default GameCatchArguments;

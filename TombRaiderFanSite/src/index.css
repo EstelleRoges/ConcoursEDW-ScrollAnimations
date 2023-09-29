@@ -27,7 +27,8 @@
   scroll-behavior: smooth;
 }
 
-::before, ::after {
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -62,7 +63,7 @@ section {
 
 }
 
-section > article {
+section>article {
   margin: auto;
   padding: 4rem 3rem;
   max-width: 1280px;
@@ -165,6 +166,6 @@ a {
 
 @keyframes textDisplay {
   100% {
-transform: translateY(0);
+    transform: translateY(0);
   }
 }

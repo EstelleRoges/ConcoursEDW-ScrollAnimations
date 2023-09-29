@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import useObserver from "../../utils/hooks/useObserver";
 
-import * as SingleStyle from "./SingleGameSectionStyle";
+import * as ContentStyle from "./ContentInfoStyle";
 
 import tr1Img from "../../assets/images/Tr1Render.png";
 import tr2Img from "../../assets/images/Tr2Render_4.png";
 import tr3Img from "../../assets/images/Tr3Render_5.png";
 
-const SingleGameSections = () => {
+const ContentInfo = () => {
   const contentTitle = useRef<HTMLHeadingElement | null>(null);
 
   const tr1ContentContainer = useRef<HTMLLIElement | null>(null);
@@ -16,6 +16,7 @@ const SingleGameSections = () => {
 
   const extraData1 = useRef<HTMLLIElement | null>(null);
   const extraData2 = useRef<HTMLLIElement | null>(null);
+  const extraData3 = useRef<HTMLLIElement | null>(null);
 
   const [isContentTitleDisplayed, setIsContentTitleDisplayed] = useState(false);
   const [isTr1CardDisplayed, setIsTr1CardDisplayed] = useState<boolean>(false);
@@ -24,6 +25,8 @@ const SingleGameSections = () => {
   const [isExtraData1Displayed, setIsExtraData1Displayed] =
     useState<boolean>(false);
   const [isExtraData2Displayed, setIsExtraData2Displayed] =
+    useState<boolean>(false);
+  const [isExtraData3Displayed, setIsExtraData3Displayed] =
     useState<boolean>(false);
 
   const { observeAndDisplay } = useObserver();
@@ -35,84 +38,86 @@ const SingleGameSections = () => {
     observeAndDisplay(tr3ContentContainer, setIsTr3CardDisplayed);
     observeAndDisplay(extraData1, setIsExtraData1Displayed);
     observeAndDisplay(extraData2, setIsExtraData2Displayed);
+    observeAndDisplay(extraData3, setIsExtraData3Displayed);
   }, [observeAndDisplay]);
 
   return (
     <section id="singleGames">
       <article>
-        <SingleStyle.ContentTitle
+        <ContentStyle.ContentTitle
           ref={contentTitle}
           $isElementDisplayed={isContentTitleDisplayed}
         >
           Contenu de la collection
-        </SingleStyle.ContentTitle>
-        <SingleStyle.ContentList>
-          <SingleStyle.ContentListItem
+        </ContentStyle.ContentTitle>
+        <ContentStyle.ContentList>
+          <ContentStyle.ContentListItem
             ref={tr1ContentContainer}
             $isElementDisplayed={isTr1CardDisplayed}
           >
-            <SingleStyle.ImageContainer>
+            <ContentStyle.ImageContainer>
               <img src={tr1Img} alt="ContentImg" />
-            </SingleStyle.ImageContainer>
-            <SingleStyle.TextContainer>
+            </ContentStyle.ImageContainer>
+            <ContentStyle.TextContainer>
               <p>
                 <span>Tomb Raider I</span>
                 <br />+<br /> Unfinished Business
               </p>
-            </SingleStyle.TextContainer>
-          </SingleStyle.ContentListItem>
-          <SingleStyle.ContentListItem
+            </ContentStyle.TextContainer>
+          </ContentStyle.ContentListItem>
+          <ContentStyle.ContentListItem
             ref={tr2ContentContainer}
             $isElementDisplayed={isTr2CardDisplayed}
           >
-            <SingleStyle.ImageContainer>
+            <ContentStyle.ImageContainer>
               <img src={tr2Img} alt="ContentImg" />
-            </SingleStyle.ImageContainer>
-            <SingleStyle.TextContainer>
+            </ContentStyle.ImageContainer>
+            <ContentStyle.TextContainer>
               <p>
                 <span>Tomb Raider II</span>
                 <br />+<br /> The Golden Mask
               </p>
-            </SingleStyle.TextContainer>
-          </SingleStyle.ContentListItem>
-          <SingleStyle.ContentListItem
+            </ContentStyle.TextContainer>
+          </ContentStyle.ContentListItem>
+          <ContentStyle.ContentListItem
             ref={tr3ContentContainer}
             $isElementDisplayed={isTr3CardDisplayed}
           >
-            <SingleStyle.ImageContainer>
+            <ContentStyle.ImageContainer>
               <img src={tr3Img} alt="ContentImg" />
-            </SingleStyle.ImageContainer>
-            <SingleStyle.TextContainer>
+            </ContentStyle.ImageContainer>
+            <ContentStyle.TextContainer>
               <p>
                 <span>Tomb Raider III</span>
                 <br />+<br /> The Lost Artifact
               </p>
-            </SingleStyle.TextContainer>
-          </SingleStyle.ContentListItem>
-        </SingleStyle.ContentList>
-        <SingleStyle.ExtraData>
+            </ContentStyle.TextContainer>
+          </ContentStyle.ContentListItem>
+        </ContentStyle.ContentList>
+        <ContentStyle.ExtraData>
           <h2>Et aussi...</h2>
           <ul>
-            <SingleStyle.ExtraDataInfo
+            <ContentStyle.ExtraDataInfo
               ref={extraData1}
               $isElementDisplayed={isExtraData1Displayed}
             >
-              En plus de la trilogie originale, vous pourrez vivre des aventures
-              inédites avec leurs extensions, autrefois disponibles que sur PC!
-            </SingleStyle.ExtraDataInfo>
-            <SingleStyle.ExtraDataInfo
+              En plus de la trilogie originale, vous pourrez vivre les aventures
+              inédites des extensions, autrefois disponibles que sur PC!
+            </ContentStyle.ExtraDataInfo>
+            <ContentStyle.ExtraDataInfo
               ref={extraData2}
               $isElementDisplayed={isExtraData2Displayed}
             >
               Si vous voulez replonger dans la nostalgie jusqu'au bout, vous
               pourrez changer les graphismes depuis les options à tout moment!
-            </SingleStyle.ExtraDataInfo>
-            <li></li>
+            </ContentStyle.ExtraDataInfo>
+            <ContentStyle.ExtraDataInfo ref={extraData3}
+              $isElementDisplayed={isExtraData3Displayed}>Afin que cette belle colelction soit accessible à tous, elle sera disponible sur toutes les plateformes! Selon certaines conditions, une réduction pourrait vous être offerte!</ContentStyle.ExtraDataInfo>
           </ul>
-        </SingleStyle.ExtraData>
+        </ContentStyle.ExtraData>
       </article>
     </section>
   );
 };
 
-export default SingleGameSections;
+export default ContentInfo;

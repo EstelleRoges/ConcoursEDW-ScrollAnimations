@@ -6,12 +6,12 @@ interface SingleGameProps {
   $isTextDisplaying?: boolean;
 }
 
-export const ShowcaseSection = styled.section`
+export const CatchSection = styled.section`
   @media (max-width: 576px) {
     padding-top: 5rem;
   }
 `;
-export const ShowcaseContainer = styled.article`
+export const CatchContainer = styled.article`
   @media (max-width: 576px) {
     padding: 3rem 1rem;
   }

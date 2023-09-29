@@ -9,3 +9,5 @@
 - Pour les transitions de l'ancien design au nouveau, traiter les opacités au scroll
 
 - Ne laisser que le logo de TombRaider apparent et ne dévoiler la navbar que quand la sourit va vers elle
+
+<a target="_blank" href="https://icons8.com/icon/fCXY5oGwdlIv/playstation">PlayStation logo</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
