@@ -56,19 +56,19 @@ export const ContentListItem = styled.li<ContentProps>`
 
   &:nth-child(1) {
     transform: ${({ $isElementDisplayed }) =>
-      $isElementDisplayed ? "translateY(2rem)" : "translateY(0)"};
+      $isElementDisplayed ? "translateY(1rem)" : "translateY(0)"};
     transition-delay: 0s;
   }
 
   &:nth-child(2) {
     transform: ${({ $isElementDisplayed }) =>
-      $isElementDisplayed ? "translateY(4rem)" : "translateY(-2rem)"};
+      $isElementDisplayed ? "translateY(2rem)" : "translateY(-2rem)"};
     transition-delay: 0.15s;
   }
 
   &:nth-child(3) {
     transform: ${({ $isElementDisplayed }) =>
-      $isElementDisplayed ? "translateY(6rem)" : "translateY(-4rem)"};
+      $isElementDisplayed ? "translateY(3rem)" : "translateY(-4rem)"};
     transition-delay: 0.3s;
   }
 
@@ -142,7 +142,7 @@ export const ExtraData = styled.div`
 export const ExtraDataInfo = styled.li<ContentProps>`
   margin: 4rem 0;
   font-size: 1.25rem;
-  transition: 0.4s 0.45s ease-out;
+  transition: 0.4s 0.2s ease-out;
   opacity: ${({ $isElementDisplayed }) => ($isElementDisplayed ? 1 : 0)};
   transform: ${({ $isElementDisplayed }) =>
     $isElementDisplayed ? "scale(1)" : "scale(0)"};

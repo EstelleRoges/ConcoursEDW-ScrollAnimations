@@ -109,10 +109,10 @@ const ContentInfo = () => {
               $isElementDisplayed={isExtraData2Displayed}
             >
               Si vous voulez replonger dans la nostalgie jusqu'au bout, vous
-              pourrez changer les graphismes depuis les options à tout moment!
+              pourrez changer les graphismes à tout moment!
             </ContentStyle.ExtraDataInfo>
             <ContentStyle.ExtraDataInfo ref={extraData3}
-              $isElementDisplayed={isExtraData3Displayed}>Afin que cette belle colelction soit accessible à tous, elle sera disponible sur toutes les plateformes! Selon certaines conditions, une réduction pourrait vous être offerte!</ContentStyle.ExtraDataInfo>
+              $isElementDisplayed={isExtraData3Displayed}>Afin que cette belle collection soit accessible à tous, elle sera disponible sur toutes les plateformes! Selon certaines conditions, une réduction pourrait vous être offerte!</ContentStyle.ExtraDataInfo>
           </ul>
         </ContentStyle.ExtraData>
       </article>

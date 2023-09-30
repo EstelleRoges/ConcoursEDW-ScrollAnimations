@@ -52,7 +52,7 @@ export const PresentationData = styled.div`
 `;
 
 export const TextPart = styled.div`
-  padding: 2rem;
+  padding: 0 2rem;
   align-self: center;
 
   @media (max-width: 576px) {
@@ -112,11 +112,6 @@ export const ImagePart = styled.div<PrezProps>`
     height: 20rem;
 
     img {
-      margin: auto;
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       object-position: 0% 15%;
     }
   }

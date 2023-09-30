@@ -35,14 +35,14 @@ const GamePresentation = () => {
               ref={prezTitle}
               $isPrezTitleDisplayed={isPrezTitleDisplayed}
             >
-              Replongez dans la nostalgie
+              La belle archéologue revient
             </PrezStyle.PrezTitle>
             <div>
               <PrezStyle.PrezTxt
                 ref={prezText1}
                 $isPrezTextDisplayed={isPrezTextDisplayed}
               >
-                Après des années de réclamations, le rêve des retro-gamers va se
+                Après des années d'espoir, le rêve des retro-gamers va se
                 réaliser: <br />{" "}
                 <span>
                   Lara Croft revient dans une version remasterisée et haute en
@@ -53,8 +53,7 @@ const GamePresentation = () => {
                 ref={prezText2}
                 $isPrezTextDisplayed={isPrezTextDisplayed}
               >
-                Les jeux bénéficieront d'un lifting tout en gardant le charme
-                cubique d'antan. Vous ne serez pas dépaysés!
+                (Re)vivez l'une des aventures les plus mythiques de l'histoire du jeu vidéo, avec des graphismes plus détaillés mais gardant le charme cubique d'antan!
               </PrezStyle.PrezTxt>
               <PrezStyle.PrezTxt
                 ref={prezText3}

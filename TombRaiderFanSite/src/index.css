@@ -43,7 +43,7 @@ body {
   min-height: 100vh;
   background-color: var(--backgroundColor);
   color: var(--primary-darker);
-  scroll-margin-top: 6rem;
+  scroll-margin-top: 10rem;
   font-family: var(--main-font);
   overflow-x: hidden;
 }
