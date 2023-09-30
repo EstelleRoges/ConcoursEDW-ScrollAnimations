@@ -4,7 +4,7 @@ export const HeroContainer = styled.section`
 z-index: 2;
   background-image: linear-gradient(
     to bottom,
-    var(--primary-darker) 97%,
+    var(--primary-darker) 85%,
     transparent 100%
   );
 
@@ -13,6 +13,7 @@ z-index: 2;
     height: 100vh;
     object-fit: cover;
     position: absolute;
+    inset: 0;
     z-index: 0;
     filter: brightness(65%);
   }
@@ -53,7 +54,7 @@ export const HeroData = styled.div`
     margin: 2rem auto;
     text-transform: uppercase;
     color: var(--backgroundColor);
-    font-size: clamp(3rem, 8vw, 8rem);
+    font-size: clamp(3rem, 8vw, 7rem);
     text-align: center;
     text-shadow: 0 0 1rem var(--secondary);
     position: sticky;

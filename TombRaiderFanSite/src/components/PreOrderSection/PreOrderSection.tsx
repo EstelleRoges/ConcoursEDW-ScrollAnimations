@@ -8,33 +8,39 @@ import PSIcon from "../../assets/svg/psIcon.svg";
 import SwitchIcon from "../../assets/svg/switchIcon.svg";
 import XBoxIcon from "../../assets/svg/xboxIcon.svg";
 import SteamIcon from "../../assets/svg/steamIcon.svg";
-import curved from "../../assets/svg/preOrderCurvedText.svg";
 
 import TrImage from "../../assets/images/Tr3Render_6.png";
 
 const PreOrderSection = () => {
   const { observeAndDisplay } = useObserver();
 
-  const preorderText = useRef<HTMLHeadingElement | null>(null);
+  const preorderIconsContainer = useRef<HTMLDivElement | null>(null);
+  const preorderTitle = useRef<HTMLHeadingElement | null>(null);
 
-  const [isPreorderTextDisplayed, setIsPreorderTextDisplayed] = useState<boolean>(false);
+  const [isPreorderTitleDisplayed, setIsPreorderTitleDisplayed] =
+    useState<boolean>(false);
+  const [isPreorderIconsContainerDisplayed, setIsPreorderIconsContainerDisplayed] =
+    useState<boolean>(false);
 
   useEffect(() => {
-    observeAndDisplay(preorderText, setIsPreorderTextDisplayed);
-    console.log(isPreorderTextDisplayed);
-  }, [isPreorderTextDisplayed, observeAndDisplay]);
+    observeAndDisplay(preorderIconsContainer, setIsPreorderIconsContainerDisplayed);
+    observeAndDisplay(preorderTitle, setIsPreorderTitleDisplayed);
+  }, [observeAndDisplay]);
 
   return (
     <section id="preorder">
       <article>
         <PreOrderStyle.PreOrderContainer>
-          <PreOrderStyle.PreorderTitle ref={preorderText} $isTextDisplayed={isPreorderTextDisplayed}>
+          <PreOrderStyle.PreorderTitle
+            ref={preorderTitle}
+            $isTitleDisplayed={isPreorderTitleDisplayed}
+          >
             Pré-commandez!
           </PreOrderStyle.PreorderTitle>
           <PreOrderStyle.CenterContainer>
             <img src={TrImage} alt="TrImage" />
           </PreOrderStyle.CenterContainer>
-          <PreOrderStyle.PreOrderIcons>
+          <PreOrderStyle.PreOrderIcons  ref={preorderIconsContainer} $isIconsContainerDisplayed={isPreorderIconsContainerDisplayed}>
             <a
               href="https://store.playstation.com/fr-fr/concept/10008568"
               target="_blank"

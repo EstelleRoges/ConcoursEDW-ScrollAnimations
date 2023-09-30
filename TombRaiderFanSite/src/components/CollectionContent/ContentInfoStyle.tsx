@@ -6,15 +6,10 @@ interface ContentProps {
 
 export const ContentTitle = styled.h2<ContentProps>`
   margin-bottom: 2rem;
-  font-size: clamp(2rem, 5vw, 3.25rem);
   opacity: ${({ $isElementDisplayed }) => ($isElementDisplayed ? 1 : 0)};
   transform: ${({ $isElementDisplayed }) =>
     $isElementDisplayed ? "translateX(0)" : "translateX(-2rem)"};
   transition: 0.4s ease-out;
-
-  @media (max-width: 578px) {
-    text-align: center;
-  }
 `;
 
 export const ContentList = styled.ul`
@@ -43,7 +38,8 @@ export const ContentListItem = styled.li<ContentProps>`
   background-color: var(--primary-darker);
   text-align: center;
   font-family: var(--title-font);
-  box-shadow: 0 0 0.5rem var(--primary), 0 0 0.25rem var(--primary), 0 0 0.25rem var(--primary);
+  box-shadow: 0 0 0.5rem var(--primary), 0 0 0.25rem var(--primary),
+    0 0 0.25rem var(--primary);
   opacity: ${({ $isElementDisplayed }) => ($isElementDisplayed ? 1 : 0)};
   transition: 0.4s ease-out;
 
@@ -104,7 +100,6 @@ export const TextContainer = styled.div`
 
   p {
     margin: 1rem;
-    font-size: clamp(1rem, 3vw, 1.35rem);
     color: var(--backgroundColor);
     text-shadow: 0 0 0.2rem var(--backgroundColor);
 

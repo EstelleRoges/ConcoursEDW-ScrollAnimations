@@ -23,7 +23,6 @@ export const ShowcaseContainer = styled.div`
 
 export const GraphicsText = styled.h2<GraphicsProps>`
   color: var(--backgroundColor);
-  font-size: clamp(2rem, 5vw, 4rem);
   text-align: center;
   text-shadow: 0 0 0.5rem var(--secondary);
   position: fixed;

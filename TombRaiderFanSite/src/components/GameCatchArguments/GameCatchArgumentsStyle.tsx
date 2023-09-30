@@ -34,8 +34,8 @@ export const SingleGameCatchphrase = styled.div<SingleGameProps>`
     color: var(--backgroundColor);
     text-align: center;
     font-weight: 700;
-    font-size: clamp(1.3rem, 3vw, 2rem);
     font-style: italic;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
     text-shadow: 0 0 0.3rem var(--backgroundColor);
     z-index: 2;
     line-height: 1.5;

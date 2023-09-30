@@ -1,43 +1,77 @@
-import * as GamePresentationStyle from "./GamePresentationStyle";
-import PrezLara_1 from "../../assets/images/LaraRender_lateralPose.png";
-import PrezLara_2 from "../../assets/images/Tr2Render_2.png";
-import PrezLara_3 from "../../assets/images/Tr3Render_5.png";
+import { useState, useEffect, useRef } from "react";
+
+import useObserver from "../../utils/hooks/useObserver";
+
+import * as PrezStyle from "./GamePresentationStyle";
+
+import PrezLara from "../../assets/images/TrImage4.png";
 
 const GamePresentation = () => {
+  const prezTitle = useRef<HTMLHeadingElement | null>(null);
+  const prezText1 = useRef<HTMLDivElement | null>(null);
+  const prezText2 = useRef<HTMLDivElement | null>(null);
+  const prezText3 = useRef<HTMLDivElement | null>(null);
+
+  const { observeAndDisplay } = useObserver();
+
+  const [isPrezTitleDisplayed, setIsPrezTitleDisplayed] =
+    useState<boolean>(false);
+  const [isPrezTextDisplayed, setIsPrezTextDisplayed] =
+    useState<boolean>(false);
+
+  useEffect(() => {
+    observeAndDisplay(prezTitle, setIsPrezTitleDisplayed);
+    observeAndDisplay(prezText1, setIsPrezTextDisplayed);
+    observeAndDisplay(prezText2, setIsPrezTextDisplayed);
+    observeAndDisplay(prezText3, setIsPrezTextDisplayed);
+  }, [observeAndDisplay]);
+
   return (
-    <GamePresentationStyle.PresentationSection id="aboutGame">
-      <GamePresentationStyle.PresentationContainer>
-        <h2>Replongez dans votre nostalgie</h2>
-        <GamePresentationStyle.PresentationData>
-          <p>
-            Après des années de réclamations, le rêve des retro-gamers va se
-            réaliser: <br /> Lara Croft revient dans une version remasterisée et
-            haute en couleurs!
-          </p>
-          <img src={PrezLara_1} alt="Lara_img" />
-        </GamePresentationStyle.PresentationData>
-      </GamePresentationStyle.PresentationContainer>
-      <GamePresentationStyle.PresentationContainer>
-        <h2>Réincarnez la légende</h2>
-        <GamePresentationStyle.PresentationData>
-          <p>
-            Le design de la belle archéologue ressemble maintenant à celui des
-            beaux renders de l'époque. D'un côté, elle n'a pas changé!
-          </p>
-          <img src={PrezLara_2} alt="Lara_img" />
-        </GamePresentationStyle.PresentationData>
-      </GamePresentationStyle.PresentationContainer>
-      <GamePresentationStyle.PresentationContainer>
-        <h2>Prenez-en plein les yeux</h2>
-        <GamePresentationStyle.PresentationData>
-          <p>
-            Le jeu bénéficiera d'un lifting tout en gardant le charme cubique
-            d'antan. Vous ne serez pas dépaysés!
-          </p>
-          <img src={PrezLara_3} alt="Lara_img" />
-        </GamePresentationStyle.PresentationData>
-      </GamePresentationStyle.PresentationContainer>
-    </GamePresentationStyle.PresentationSection>
+    <PrezStyle.PresentationSection id="aboutGame">
+      <PrezStyle.PresentationContainer>
+        <PrezStyle.PresentationData>
+          <PrezStyle.TextPart>
+            <PrezStyle.PrezTitle
+              ref={prezTitle}
+              $isPrezTitleDisplayed={isPrezTitleDisplayed}
+            >
+              Replongez dans la nostalgie
+            </PrezStyle.PrezTitle>
+            <div>
+              <PrezStyle.PrezTxt
+                ref={prezText1}
+                $isPrezTextDisplayed={isPrezTextDisplayed}
+              >
+                Après des années de réclamations, le rêve des retro-gamers va se
+                réaliser: <br />{" "}
+                <span>
+                  Lara Croft revient dans une version remasterisée et haute en
+                  couleurs!
+                </span>
+              </PrezStyle.PrezTxt>
+              <PrezStyle.PrezTxt
+                ref={prezText2}
+                $isPrezTextDisplayed={isPrezTextDisplayed}
+              >
+                Les jeux bénéficieront d'un lifting tout en gardant le charme
+                cubique d'antan. Vous ne serez pas dépaysés!
+              </PrezStyle.PrezTxt>
+              <PrezStyle.PrezTxt
+                ref={prezText3}
+                $isPrezTextDisplayed={isPrezTextDisplayed}
+              >
+                La collection sera disponible le <span>14 février 2024</span>,
+                pour les 54 ans de notre chère héroïne!
+              </PrezStyle.PrezTxt>
+            </div>
+          </PrezStyle.TextPart>
+          <PrezStyle.ImagePart>
+            <PrezStyle.Gradient $isPrezTitleDisplayed={isPrezTitleDisplayed} />
+            <img src={PrezLara} alt="Lara_img" />
+          </PrezStyle.ImagePart>
+        </PrezStyle.PresentationData>
+      </PrezStyle.PresentationContainer>
+    </PrezStyle.PresentationSection>
   );
 };
 

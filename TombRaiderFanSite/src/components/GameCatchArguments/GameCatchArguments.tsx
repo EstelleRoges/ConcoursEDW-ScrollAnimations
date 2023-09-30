@@ -40,7 +40,7 @@ const {observeAndDisplay} = useObserver();
       setIsTr3ContainerDisplayed,
       setIsTr3TextDisplaying
     );
-  }, []);
+  }, [observeAndDisplay]);
 
   return (
     <div id="GameCatchArguments">
@@ -71,8 +71,8 @@ const {observeAndDisplay} = useObserver();
             $index={2}
           >
             <p>
-              Retrouvez la la dague de Xian avant qu'elle ne tombe entre de
-              mauvaise mains
+              Retrouvez la dague de Xian avant qu'elle ne tombe entre de
+              mauvaises mains
             </p>
             <CatchStyle.TrImage>
               <CatchStyle.Gradient

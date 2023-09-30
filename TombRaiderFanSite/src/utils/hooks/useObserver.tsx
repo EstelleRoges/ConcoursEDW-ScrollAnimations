@@ -18,14 +18,14 @@ const useObserver = () => {
           ) {
             setTextState(true);
           }
-          elementToDisplay.style.animation = "imageGradient";
+          // elementToDisplay.style.animation = "imageGradient";
           observer.unobserve(elementToDisplay);
         }
       },
       {
         root: null,
         threshold: 0.6,
-        rootMargin: "0px",
+        rootMargin: "-20% 0px",
       }
     );
 
