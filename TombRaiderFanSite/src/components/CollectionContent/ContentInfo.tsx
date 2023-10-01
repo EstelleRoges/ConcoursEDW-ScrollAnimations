@@ -4,8 +4,8 @@ import useObserver from "../../utils/hooks/useObserver";
 import * as ContentStyle from "./ContentInfoStyle";
 
 import tr1Img from "../../assets/images/Tr1Render.png";
-import tr2Img from "../../assets/images/Tr2Render_4.png";
-import tr3Img from "../../assets/images/Tr3Render_5.png";
+import tr2Img from "../../assets/images/Tr2Render.png";
+import tr3Img from "../../assets/images/Tr3Render.png";
 
 const ContentInfo = () => {
   const contentTitle = useRef<HTMLHeadingElement | null>(null);

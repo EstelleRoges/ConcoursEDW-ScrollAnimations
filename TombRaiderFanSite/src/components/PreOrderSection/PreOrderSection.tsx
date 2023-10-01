@@ -4,9 +4,9 @@ import useObserver from "../../utils/hooks/useObserver";
 
 import * as PreOrderStyle from "./PreOrderStyle";
 
-import Tr1Jacket from "../../assets/images/tr1cover.jpg";
-import Tr2Jacket from "../../assets/images/tr2cover.jpg";
-import Tr3Jacket from "../../assets/images/tr3cover.png";
+import Tr1Cover from "../../assets/images/tr1cover.jpg";
+import Tr2Cover from "../../assets/images/tr2cover.jpg";
+import Tr3Cover from "../../assets/images/tr3cover.png";
 
 import PSIcon from "../../assets/svg/psIcon.svg";
 import SwitchIcon from "../../assets/svg/switchIcon.svg";
@@ -22,8 +22,7 @@ const PreOrderSection = () => {
 
   const [isPreorderTitleDisplayed, setIsPreorderTitleDisplayed] =
     useState<boolean>(false);
-  const [areCoversDisplayed, setAreCoversDisplayed] =
-    useState<boolean>(false);
+  const [areCoversDisplayed, setAreCoversDisplayed] = useState<boolean>(false);
   const [
     isPreorderIconsContainerDisplayed,
     setIsPreorderIconsContainerDisplayed,
@@ -34,15 +33,12 @@ const PreOrderSection = () => {
       preorderIconsContainer,
       setIsPreorderIconsContainerDisplayed
     );
-    observeAndDisplay(
-      coverContainer,
-      setAreCoversDisplayed
-    );
+    observeAndDisplay(coverContainer, setAreCoversDisplayed);
     observeAndDisplay(preorderTitle, setIsPreorderTitleDisplayed);
   }, [observeAndDisplay]);
 
   return (
-    <section id="preorder">
+    <PreOrderStyle.PreorderSection id="preorder">
       <PreOrderStyle.PreOrderContainer>
         <PreOrderStyle.PreorderTitle
           ref={preorderTitle}
@@ -50,12 +46,13 @@ const PreOrderSection = () => {
         >
           Pré-commandez!
         </PreOrderStyle.PreorderTitle>
-        <PreOrderStyle.CenterContainer ref={coverContainer} $areCoversDisplayed={areCoversDisplayed}>
-          <img src={Tr1Jacket} alt="TrJacket" />
-
-          <img src={Tr2Jacket} alt="TrJacket" />
-
-          <img src={Tr3Jacket} alt="TrJacket" />
+        <PreOrderStyle.CenterContainer
+          ref={coverContainer}
+          $areCoversDisplayed={areCoversDisplayed}
+        >
+          <img src={Tr1Cover} alt="TrJacket" />
+          <img src={Tr2Cover} alt="TrJacket" />
+          <img src={Tr3Cover} alt="TrJacket" />
         </PreOrderStyle.CenterContainer>
         <PreOrderStyle.PreOrderIcons
           ref={preorderIconsContainer}
@@ -87,7 +84,7 @@ const PreOrderSection = () => {
           </a>
         </PreOrderStyle.PreOrderIcons>
       </PreOrderStyle.PreOrderContainer>
-    </section>
+    </PreOrderStyle.PreorderSection>
   );
 };
 

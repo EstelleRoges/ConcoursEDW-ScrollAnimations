@@ -4,7 +4,7 @@ import useObserver from "../../utils/hooks/useObserver";
 
 import * as PrezStyle from "./GamePresentationStyle";
 
-import PrezLara from "../../assets/images/TrImage4.png";
+import PrezLara from "../../assets/images/TrPrezImage.png";
 
 const GamePresentation = () => {
   const prezTitle = useRef<HTMLHeadingElement | null>(null);

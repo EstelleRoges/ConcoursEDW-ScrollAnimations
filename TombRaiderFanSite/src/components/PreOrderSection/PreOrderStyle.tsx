@@ -6,16 +6,29 @@ interface PreorderProps {
   $isIconsContainerDisplayed?: boolean;
 }
 
+export const PreorderSection = styled.section`
+  background-image: linear-gradient(
+    transparent 5%,
+    var(--primary) 10%,
+    var(--primary-lighter) 25%,
+    var(--primary-lighter) 75%,
+    var(--primary) 90%,
+    transparent 95%
+  );
+`;
+
 export const PreOrderContainer = styled.article`
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--backgroundColor);
 `;
 
 export const PreorderTitle = styled.h2<PreorderProps>`
   margin: 1rem 0;
   text-align: center;
-  transition: 0.5s 0.25s ease-in-out;
+  text-shadow: 0 0 0.3rem var(--backgroundColor);
+  transition: 0.5s ease-in-out;
   opacity: ${({ $isTitleDisplayed }) => ($isTitleDisplayed ? 1 : 0)};
   transform: ${({ $isTitleDisplayed }) =>
     $isTitleDisplayed
@@ -24,7 +37,7 @@ export const PreorderTitle = styled.h2<PreorderProps>`
 `;
 
 export const CenterContainer = styled.div<PreorderProps>`
-margin: 6rem 0;
+  padding: 6rem 0;
   width: 100%;
   height: 100%;
   position: relative;
@@ -37,25 +50,61 @@ margin: 6rem 0;
     max-height: 180px;
     display: block;
     position: relative;
-    bottom: ${({$areCoversDisplayed}) => $areCoversDisplayed ? "-5rem" : 0};
-    box-shadow: 0 0 0.5rem var(--primary-darker);
-    transform: ${({ $areCoversDisplayed }) => ($areCoversDisplayed ? "scale(1)" : "scale(0)")};
+    bottom: ${({ $areCoversDisplayed }) => ($areCoversDisplayed ? "-5rem" : 0)};
+    box-shadow: 0 0 0.5rem var(--primary-darker),
+      0 0 0.5rem var(--primary-darker), 0 0 0.5rem var(--primary-darker);
+    transform: ${({ $areCoversDisplayed }) =>
+      $areCoversDisplayed ? "scale(1)" : "scale(0)"};
     opacity: ${({ $areCoversDisplayed }) => ($areCoversDisplayed ? 1 : 0)};
-    
-    transition: transform 0.4s ease-out, opacity 0.75s ease-out, scale 0.8s ease-in-out;
+
+    transition: transform 0.4s ease-out, opacity 0.75s ease-out,
+      scale 0.8s ease-in-out;
 
     &:nth-child(1) {
-      transform: ${({$areCoversDisplayed}) => $areCoversDisplayed ? "translateX(-1rem) translateY(-2rem) rotate(-20deg)" : "translateX(0) translateY(0) rotate(0)"};
+      transform: ${({ $areCoversDisplayed }) =>
+        $areCoversDisplayed
+          ? "translateX(-1rem) translateY(-2rem) rotate(-20deg)"
+          : "translateX(0) translateY(0) rotate(0)"};
     }
 
     &:nth-child(2) {
-      transform: ${({$areCoversDisplayed}) => $areCoversDisplayed ? "translateY(-7rem)" : "translateY(0)"};
+      transform: ${({ $areCoversDisplayed }) =>
+        $areCoversDisplayed ? "translateY(-7rem)" : "translateY(0)"};
       transition-delay: 0.2s;
     }
 
     &:nth-child(3) {
-      transform: ${({$areCoversDisplayed}) => $areCoversDisplayed ? "translateX(1rem) translateY(-2rem) rotate(20deg)" : "translateX(0) translateY(0) rotate(0)"};
-       transition-delay: 0.4s;
+      transform: ${({ $areCoversDisplayed }) =>
+        $areCoversDisplayed
+          ? "translateX(1rem) translateY(-2rem) rotate(20deg)"
+          : "translateX(0) translateY(0) rotate(0)"};
+      transition-delay: 0.4s;
+    }
+  }
+
+  @media (max-width: 578px) {
+    transform: scale(0.8);
+    img {
+      &:nth-child(1) {
+        transform: ${({ $areCoversDisplayed }) =>
+          $areCoversDisplayed
+            ? "translateX(3rem) translateY(-10rem) rotate(-5deg)"
+            : "translateX(0) translateY(0) rotate(0)"};
+      }
+
+      &:nth-child(2) {
+        transform: ${({ $areCoversDisplayed }) =>
+          $areCoversDisplayed ? "translateY(-4rem)" : "translateY(0)"};
+        transition-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        transform: ${({ $areCoversDisplayed }) =>
+          $areCoversDisplayed
+            ? "translateX(-3rem) translateY(2rem) rotate(5deg)"
+            : "translateX(0) translateY(0) rotate(0)"};
+        transition-delay: 0.4s;
+      }
     }
   }
 `;
@@ -66,6 +115,7 @@ export const PreOrderIcons = styled.div<PreorderProps>`
   grid-template-columns: auto auto auto auto;
 
   @media (max-width: 576px) {
+    margin-top: 0;
     grid-template-columns: auto auto;
   }
 
@@ -102,6 +152,13 @@ export const PreOrderIcons = styled.div<PreorderProps>`
 
     @media (max-width: 768px) {
       margin: 2rem;
+    }
+    @media (max-width: 578px) {
+      margin: 1.5rem;
+      transform: scale(0.9);
+      &:first-of-type {
+        transform: scale(1);
+      }
     }
   }
 `;

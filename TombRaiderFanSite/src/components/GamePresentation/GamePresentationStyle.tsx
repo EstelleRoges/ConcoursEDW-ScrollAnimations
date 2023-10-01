@@ -133,5 +133,10 @@ export const Gradient = styled.div<PrezProps>`
   );
   background-size: 200% 100%;
   animation: ${({ $isPrezTitleDisplayed }) =>
-      $isPrezTitleDisplayed ? "imageGradientToRight 1s 0.5s forwards" : "none"};
+      $isPrezTitleDisplayed ? "imageGradientToRight 1s 0.15s forwards" : "none"};
+
+        @media (max-width: 578px) {
+    animation: ${({ $isPrezTitleDisplayed }) =>
+      $isPrezTitleDisplayed ? "imageGradientToRight 1s forwards" : "none"};
+  }
 `;

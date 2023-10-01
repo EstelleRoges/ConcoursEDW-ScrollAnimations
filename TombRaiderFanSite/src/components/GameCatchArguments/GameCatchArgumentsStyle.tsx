@@ -111,4 +111,9 @@ export const Gradient = styled.div<SingleGameProps>`
         ? "imageGradientToLeft 1s forwards"
         : "imageGradientToRight 1s forwards"
       : "none"};
+
+  @media (max-width: 578px) {
+    animation: ${({ $isTrContainerDisplayed }) =>
+      $isTrContainerDisplayed ? "imageGradientToLeft 1s forwards" : "none"};
+  }
 `;
