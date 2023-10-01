@@ -20,6 +20,7 @@
 
   color-scheme: light dark;
   text-rendering: optimizeLegibility;
+  font-display: auto;
 }
 
 * {

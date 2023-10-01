@@ -5,9 +5,9 @@ import { GraphicsComparison } from "../ComponentsIndex";
 
 import * as CatchStyle from "./GameCatchArgumentsStyle";
 
-import screenshot_tr1 from "../../assets/images/Tr1Image.jpg";
-import screenshot_tr2 from "../../assets/images/Tr2Image.jpg";
-import screenshot_tr3 from "../../assets/images/Tr3Image.jpg";
+import screenshot_tr1 from "../../assets/images/Tr1Image.webp";
+import screenshot_tr2 from "../../assets/images/Tr2Image.webp";
+import screenshot_tr3 from "../../assets/images/Tr3Image.webp";
 
 const GameCatchArguments = () => {
   const tr1Container = useRef<HTMLDivElement | null>(null);

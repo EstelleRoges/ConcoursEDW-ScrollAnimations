@@ -4,9 +4,9 @@ import useObserver from "../../utils/hooks/useObserver";
 
 import * as PreOrderStyle from "./PreOrderStyle";
 
-import Tr1Cover from "../../assets/images/tr1cover.jpg";
-import Tr2Cover from "../../assets/images/tr2cover.jpg";
-import Tr3Cover from "../../assets/images/tr3cover.png";
+import Tr1Cover from "../../assets/images/tr1cover.webp";
+import Tr2Cover from "../../assets/images/tr2cover.webp";
+import Tr3Cover from "../../assets/images/tr3cover.webp";
 
 import PSIcon from "../../assets/svg/psIcon.svg";
 import SwitchIcon from "../../assets/svg/switchIcon.svg";

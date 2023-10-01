@@ -1,6 +1,6 @@
 import * as FooterStyle from "./FooterStyle";
 
-import TrRender from "../../assets/images/Tr3Render_2.png";
+import TrRender from "../../assets/images/Tr3Render_2.webp";
 
 const Footer = () => {
   return (
