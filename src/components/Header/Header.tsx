@@ -76,9 +76,9 @@ const Header = () => {
                     setIsMobileNavVisible((prevValue) => !prevValue)
                   }
                 >
-                  <button onClick={() =>
-                    setIsMobileNavVisible((prevValue) => !prevValue)
-                  }><a href="#preorder">Pré-commander</a> </button>
+                  <button>
+                    <a href="#preorder">Pré-commander</a>{" "}
+                  </button>
                 </li>
               </ul>
             </HeaderStyle.Navigation>

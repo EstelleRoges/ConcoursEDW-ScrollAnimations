@@ -24,7 +24,7 @@ const useObserver = () => {
       {
         root: null,
         threshold: 0.6,
-        rootMargin: "-15% 0px",
+        rootMargin: "-12% 0px",
       }
     );
 
