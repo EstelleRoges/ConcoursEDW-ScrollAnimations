@@ -1,7 +1,7 @@
 # ConcoursEDW-ScrollAnimations
 ******************************************
 À propos
- Ce projet est ma participation au concours lancé par École du Web, qui avait pour sujet les animations au scroll.
+❃ Ce projet est ma participation au concours lancé par École du Web, qui avait pour sujet les animations au scroll.
 
 ******************************************
 Technologies utilisées
@@ -34,4 +34,4 @@ Enseignements tirés du projet
 
 ❃ J'aurais bien utilisé des librairies, mais j'ai rejeté l'idée quand j'ai lu que ce concours était aussi pour montrer ce qu'on pouvait faire. Des fois, metrre la main dans le cambouis à ce point, c'est bien. 
 
-❃J'ai utilisé les intersectionObservers pour la première fois. Et je compte bien recommencer!
+❃ J'ai utilisé les intersectionObservers pour la première fois. Et je compte bien recommencer!
