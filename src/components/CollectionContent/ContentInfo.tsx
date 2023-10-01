@@ -4,7 +4,7 @@ import useObserver from "../../utils/hooks/useObserver";
 import * as ContentStyle from "./ContentInfoStyle";
 
 import tr1Img from "../../assets/images/Tr1Render.png";
-import tr2Img from "../../assets/images/Tr2Render.png";
+// import tr2Img from "../../assets/images/Tr2Render.png";
 import tr3Img from "../../assets/images/Tr3Render.png";
 
 const ContentInfo = () => {
@@ -65,7 +65,7 @@ const ContentInfo = () => {
               </p>
             </ContentStyle.TextContainer>
           </ContentStyle.ContentListItem>
-          <ContentStyle.ContentListItem
+          {/* <ContentStyle.ContentListItem
             ref={tr2ContentContainer}
             $isElementDisplayed={isTr2CardDisplayed}
           >
@@ -78,7 +78,7 @@ const ContentInfo = () => {
                 <br />+<br /> The Golden Mask
               </p>
             </ContentStyle.TextContainer>
-          </ContentStyle.ContentListItem>
+          </ContentStyle.ContentListItem> */}
           <ContentStyle.ContentListItem
             ref={tr3ContentContainer}
             $isElementDisplayed={isTr3CardDisplayed}
