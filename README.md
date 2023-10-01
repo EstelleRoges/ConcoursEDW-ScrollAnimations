@@ -21,6 +21,10 @@ Outils utilisés pour le développement du projet
 
 ❃ Fonts: Google Fonts et DeviantArt (Pedro-Croft)
 
+❃ SVGs: SVG Repo
+
+❃ Vidéos: Youtube
+
 ❃ Aide au débogage: ChatGPT et Bard
 
 ❃ Source des images: Captain Alban et Tomb Raider France
