@@ -1,27 +1,35 @@
-# React + TypeScript + Vite
+ConcoursEDW-ScrollAnimations
+*******************************************
+À propos 
+❃ Ce projet est ma participation au concours lancé par École du Web, qui avait pour sujet les animations au scroll.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*******************************************
+Technologies utilisées
 
-Currently, two official plugins are available:
+❃ Initialisation: Vite.js
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+❃ Code: Typescript
 
-## Expanding the ESLint configuration
+❃ React
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+❃ Styled-components
 
-- Configure the top-level `parserOptions` property like this:
+*******************************************
+Outils utilisés pour le développement du projet
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+❃ Palette de couleurs: Coolors
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+❃ Fonts: Google Fonts et DeviantArt (Pedro-Croft)
+
+❃ Aide au débogage: ChatGPT et Bard
+
+❃ Source des images: Captain Alban et Tomb Raider France
+
+*******************************************
+Enseignements tirés du projet
+
+❃ Parfois, les animations, c'est fastidieux à faire! Et on peut se retrouver limité si ce qu'on veut faire est complexe...
+
+❃ J'aurais bien utilisé des librairies, mais j'ai rejeté l'idée quand j'ai lu que ce concours était aussi pour montrer ce qu'on pouvait faire. Des fois, metrre la main dans le cambouis à ce point, c'est bien.
+
+❃ J'ai utilisé les intersectionObservers pour la première fois. Et je compte bien recommencer!
